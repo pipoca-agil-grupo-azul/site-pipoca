@@ -1,50 +1,46 @@
 import { StyledFooter } from "./style";
-import iconPhonePhoneBlack from "../../assets/icon _phone_black.svg";
-import iconMailBlack from "../../assets/icon _mail_black.svg";
-import iconLinkedin from "../../assets/icon_linkedin.svg";
-import iconInstagram from "../../assets/icon _instagram.svg";
-import iconYoutube from "../../assets/icon_youtube.svg";
-import iconFacebook from "../../assets/icon_facebook.svg";
+import iconPhonePhoneBlack from "../../assets/icon _phone.svg";
+import iconMailBlack from "../../assets/icon _mail.svg";
+import iconLinkedin from "../../assets/icon_lkd-white.svg";
+import iconInstagram from "../../assets/icon_in-white.svg";
+import iconYoutube from "../../assets/icon_yt-white.svg";
+import iconFacebook from "../../assets/icon_face-white.svg";
 import logoImg from "../../assets/pipoca-logo.svg";
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <section className="information">
-      <img src={logoImg} alt="" className="logo-img"/>
+      <section className="container__newsletter">
 
-        {/* <div className="information-div">
-          <img src={iconPinBlack} alt="" />
-          <p> Rua tal tal tal, Bairro Cidade, Estado - BR </p>
-        </div> */}
+       <div className="container__logo">
+        <img src={logoImg} alt="" className="logo-img"/>
+        <p> Pipoca Ágil</p>
+       </div>
 
-        <div className="information-div">
-          <img src={iconPhonePhoneBlack} alt="" />
-          <p> (21) 91234-5678 </p>
-        </div>
+        <h2> Receba nossa newsletter </h2>
 
-        <div className="information-div">
-          <img src={iconMailBlack} alt="" />
-          <p> contato@email.com </p>
-        </div>
-      </section>
-
-      <section className="links"></section>
-
-      <section className="newsletter">
-        <h3>
-          {" "}
-          <strong> Assine nossa Newsletter! </strong>
-        </h3>
         <form action="">
           <input type="text" placeholder="Email" />
-          <button type="submit" className="submit-button-newsletter-footer">  → </button>
+          <button type="submit" className="submit-button-newsletter-footer">  CADASTRAR </button>
         </form>
-        <h3>
-          {" "}
-          <strong> Siga a gente! </strong>
-        </h3>
 
+      </section>
+
+      <section className="container__follow-us">
+        
+        <div className="container__informations">
+          <div className="information-div">
+            <img src={iconPhonePhoneBlack} alt="" />
+            <p> (21) 91234-5678 </p>
+          </div>
+
+          <div className="information-div">
+            <img src={iconMailBlack} alt="" />
+            <p> contato@email.com </p>
+          </div>
+        </div>
+
+        <h2> Siga a gente</h2>
         <div className="links-social-media-footer">
 
           <a href="https://www.linkedin.com/in/ibson-cabral/" target="_blank">
@@ -66,13 +62,11 @@ export const Footer = () => {
       <section className="bottom-footer">
       
         <div className="copyright">
-          <p> © Pipoca Ágil – Todos os direitos reservados </p>
+          <p> Política de Privacidade & Cookies </p>
         </div>
         
-        <div className="terms-and-privacy">
-          <a href="">  Termos e Condições  </a>
-
-          <a href=" "> Política de Privacidade </a>
+        <div className="container__reserved-rights">
+          <p> © 2023 Pipoca Ágil - Todos os direitos reservados. </p>
         </div>
     
 

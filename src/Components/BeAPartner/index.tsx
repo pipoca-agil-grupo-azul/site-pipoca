@@ -7,6 +7,7 @@ export const BeAPartner = () => {
   return (
     <StyledBeAPartner>
       <div className="container__ibson-img-and-box">
+        
         <div className="container__be-a-partner">
           <img src={petalsImg} alt="" className="petals-img" />
 

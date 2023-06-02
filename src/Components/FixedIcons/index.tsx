@@ -7,7 +7,7 @@ export const FixedIcons = () => {
     <StyledWhatsButton>
 
      <div>
-        <a href="https://api.whatsapp.com/send?phone=5521984438142&text=Ol%C3%A1%2C%20como%20voc%C3%AA%20est%C3%A1%3F" target="blank">
+        <a href="https://api.whatsapp.com/send?phone=5521971439655&text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20Pipoca%20%C3%81gil%21" target="blank">
           <img src={whatsImg} alt="" className="whatsapp-btn"/> 
         </a>
      </div>

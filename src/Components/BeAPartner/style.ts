@@ -47,7 +47,7 @@ export const StyledBeAPartner = styled.div`
         bottom: 0;
         right: 0;
         height: 80%;
-
+        max-height: 80%;
     }
     
     .partner-btn{

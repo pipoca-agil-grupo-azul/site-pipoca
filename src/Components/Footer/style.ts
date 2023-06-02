@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
 
-    background-color: var(--color-primary-lighter);
-    color: var(--color-grey-900);
+    background-color: var(--color-grey-900);
 
     display: flex;
     align-items: center;
@@ -13,25 +12,52 @@ export const StyledFooter = styled.footer`
     padding: 100px;
 
     position: relative;
+    color: var(--color-grey-0);
 
-    .logo-img{
-        color: white;
-        width: fit-content;
-        padding: 20px;
-        justify-self: center;
-        align-self: center;
-    }
-    .information{
+    .container__newsletter{
         display: flex;
         flex-direction: column;
+        gap: 10px;
+    }
+    .container__logo{
+        display: flex;
+        align-items: center;
         gap: 20px;
     }
-    .information-div{
-        display: flex;
-        gap: 20px;
+    .container__logo img{
+        width: 50px;
     }
 
-    .newsletter{
+    .submit-button-newsletter-footer{
+        transition: 400ms;
+    }
+    .submit-button-newsletter-footer:hover{
+        border: 1px solid var(--color-grey-0);
+        color: var(--color-grey-0);
+    } 
+
+    form{
+        display: flex;
+        gap: 10px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+    }
+
+    form input{
+        padding: 25px;
+        outline: none;
+        border: 1px solid var(--color-grey-500);
+        background-color: var(--color-grey-900);
+        color: var(--color-grey-0);
+    }
+    form button{
+        border:1px solid var(--color-primary);
+        outline: none;
+        background-color: var(--color-grey-900);
+        color: var(--color-primary);
+        padding: 20px;
+    }
+
+    .container__follow-us{
         margin-top: 20px;
         display: flex;
         flex-direction: column;
@@ -39,55 +65,24 @@ export const StyledFooter = styled.footer`
     }   
     .links-social-media-footer{
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        gap: 5px;
     }
-    .links-social-media-footer img{
+    
+    .links-social-media-footer a img{
         cursor: pointer;
         transition: 400ms;
+        z-index: 100;
     }
-    .links-social-media-footer img:hover{
-        filter: brightness(0.4);
+    .links-social-media-footer a img:hover{
+        filter: brightness(1.4);
         transform: scale(1.1);
-    }
-    .submit-button-newsletter-footer{
-        transition: 400ms;
-    }
-    .submit-button-newsletter-footer:hover{
-        color: var(--color-primary);            
-        background-color: #FFCC33;
-    }
-
-    form{
-        display: flex;
-        background-color: var(--color-grey-0);
-        border-radius: 10px;
-        padding: 4px;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-    }
-
-    form input{
-        padding: 5px;
-        outline: none;
-        border: none;
-        border-radius: 10px;
-    }
-    form button{
-        background-color: var(--color-primary);
-        outline: none;
-        border: none;
-        color: var(--color-grey-0);
-        padding: 10px;
-        border-radius: 10px;
-    }
-    form button:hover{
-        background-color: var(--color-secondary);
     }
 
     .bottom-footer{
-        background-color: var(--color-grey-900);
-        color: var(--color-grey-0);
-
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 10px;
         width: 100vw;
 
@@ -99,14 +94,22 @@ export const StyledFooter = styled.footer`
         position: absolute;
         bottom: 0;
     }
-
     
-    .terms-and-privacy{
+    .container__reserved-rights{
+       padding: 10px;
+       color: rgba(255, 255, 255, 0.5);
+    }
+
+    .container__informations{
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 20px;
     }
-    a{
-        color: var(--color-grey-0);
+    .information-div{
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
     @media (max-width:1023px) {

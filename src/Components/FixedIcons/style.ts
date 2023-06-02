@@ -34,7 +34,7 @@ export const StyledWhatsButton = styled.div`
         border-radius: var(--border-radius-default);
         
         font-weight: 600;
-        color: var(--color-primary);     
+        color: var(--color-grey-900);     
         border: 1px solid var(--color-primary);
         background-color: #FFCC33;
         box-shadow: var(--color-primary) 5px 5px 15px;
