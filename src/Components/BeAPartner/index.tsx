@@ -6,8 +6,7 @@ import petalsRightImg from "../../assets/petalas-right.svg";
 export const BeAPartner = () => {
   return (
     <StyledBeAPartner>
-      <div className="container__ibson-img-and-box">
-        
+      
         <div className="container__be-a-partner">
           <img src={petalsImg} alt="" className="petals-img" />
 
@@ -25,8 +24,7 @@ export const BeAPartner = () => {
         </div>
 
         <img src={ibsonImg} alt="" className="ibson-img" />
-      </div>
-
+      
       <img src={petalsRightImg} alt="" className="petals-img-right" />
     </StyledBeAPartner>
   );

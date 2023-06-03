@@ -5,7 +5,6 @@ export const StyledInformationPreHeader = styled.div`
     color: var(--color-grey-0);
 
     padding: 10px;
-    width: 100vw;
 
     display: flex;
     justify-content: space-around;

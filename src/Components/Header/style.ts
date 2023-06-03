@@ -48,7 +48,7 @@ export const StyledHeader = styled.header`
             right: 0px;
             top: 10vh;
 
-            width: 100vw;
+            width: 100%;
             height: 100vh;
 
             a{

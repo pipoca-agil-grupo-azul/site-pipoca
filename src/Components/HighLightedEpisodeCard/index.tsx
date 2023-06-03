@@ -1,4 +1,4 @@
-import { StyledContainerNextEpisode } from "./style";
+import { StyledContainerHighlightedEpisode } from "./style";
 import { IVideoInfo } from "../../Interfaces/videosInterfaces";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 export const HighlightedEpisodeCard = ({ videoContent }: Props) => {
  
     return (
-        <StyledContainerNextEpisode>
+        <StyledContainerHighlightedEpisode>
               
             <div className="container_youtube-embed">
                     <iframe width="100%" height="315" src={`https://www.youtube.com/embed/${videoContent.youtubeId}`} allow="autoplay; encrypted-media"></iframe>
@@ -22,6 +22,6 @@ export const HighlightedEpisodeCard = ({ videoContent }: Props) => {
                     <p> DATA: 02/06/2023 </p> 
                 </div>
 
-        </StyledContainerNextEpisode>
+        </StyledContainerHighlightedEpisode>
     );
 };

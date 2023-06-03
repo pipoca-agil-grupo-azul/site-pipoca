@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledContainerNextEpisode = styled.li`
+export const StyledContainerHighlightedEpisode = styled.li`
     display: flex;
     
     gap: 20px;
@@ -44,7 +44,7 @@ export const StyledContainerNextEpisode = styled.li`
         }
 
        .container_youtube-embed{
-            width: 100vw;
+            width: 100%;
 
             display: flex;
         } 

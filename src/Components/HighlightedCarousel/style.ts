@@ -8,7 +8,7 @@ export const StyledHighlightedList = styled.ul`
     font-family: var(--font-family-2);
 
     @media (max-width:1023px) {
-        width: 100vw;
+        width: 100%;
         position: relative;
         left: -40px;
         margin-top: 20px;

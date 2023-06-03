@@ -30,12 +30,12 @@ export const Footer = () => {
         
         <div className="container__informations">
           <div className="information-div">
-            <img src={iconPhonePhoneBlack} alt="" />
+            <img src={iconPhonePhoneBlack} alt="icon-phone" />
             <p> (21) 91234-5678 </p>
           </div>
 
           <div className="information-div">
-            <img src={iconMailBlack} alt="" />
+            <img src={iconMailBlack} alt="icon-mail" />
             <p> contato@email.com </p>
           </div>
         </div>

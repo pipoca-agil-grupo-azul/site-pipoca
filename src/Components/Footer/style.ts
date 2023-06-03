@@ -84,7 +84,7 @@ export const StyledFooter = styled.footer`
         justify-content: center;
         align-items: center;
         padding: 10px;
-        width: 100vw;
+        width: 100%;
 
         display: flex;
         justify-content: space-around;
@@ -115,6 +115,11 @@ export const StyledFooter = styled.footer`
     @media (max-width:1023px) {
         .terms-and-privacy{
             display: none;
+        }
+        .container__informations{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
         }
     }
 

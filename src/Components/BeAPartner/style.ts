@@ -10,12 +10,8 @@ export const StyledBeAPartner = styled.div`
     color: var(--color-grey-0);
 
     position: relative;
-
-    .container__ibson-img-and-box{
-        width: 60vw;
-
-        margin: 0 auto;
-    }
+    padding: 100px 100px 200px 100px;
+    
     .container__be-a-partner{
         background-color: var(--color-primary);
         
@@ -24,12 +20,13 @@ export const StyledBeAPartner = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
+
         padding: 100px;
 
         border-radius: 40px;
 
         position: relative;
-        top: -50px;
+        
     }
     .petals-img-right{
         position: absolute;
@@ -71,26 +68,63 @@ export const StyledBeAPartner = styled.div`
         transform: scale(1.1);
     }
 
+    @media (max-width:767px) {
 
-    @media (max-width:1023px) {
-
-        .container__be-a-partner{
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-            padding: 20px;
-        }
-        .container__ibson-img-and-box{
-            width: 80vw;
-        }
-       
         .ibson-img{
             display: none;
         }    
+
+        .container__be-a-partner{
+            border-radius: 0px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            max-width: 99vw;
+        }
+
+        .text-be-a-partner{
+            min-width: 320px;
+            text-align:justify;
+        }
+
         .partner-btn{
-            bottom: 10px;
+            width: 200px;
+            text-align: center;
+            z-index: 22;
+        }
+        
+    }
+    @media (max-width:1023px) {
+        .container__be-a-partner{
+            flex-direction: column;
+            gap: 20px;
+        }
+        .ibson-img{
+            display: none;
+        }  
+    }
+    @media (min-width: 1023px) and (max-width: 1499px) {
+        .container__be-a-partner{
+            
+        }
+        .partner-btn{
+            width: 200px;
+            text-align: center;
+            z-index: 22;
+        }
+        .ibson-img{
+            
+            right: -150px;
+            height: 70%;
         }
     }
 
+    @media (min-width: 1500px) and (max-width: 1900px) {
+        .ibson-img{
+            right: -20px;
+            height: 75%;
+        }
+    }
 `;
 
