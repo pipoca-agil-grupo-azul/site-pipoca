@@ -6,16 +6,12 @@ export const StyledSubscribe = styled.div`
     align-items: center;
     justify-content: center;
 
-    
-    margin: 0 auto;
-
-    width: fit-content;
+    margin: 98px auto;
 
     background-color: #F3E857;
     background-image: linear-gradient(#FDF2A4,#F3E857);
     width: 100%;
     padding: 50px;
-    
     
     h2{
         font-size: var(--title-size-small);

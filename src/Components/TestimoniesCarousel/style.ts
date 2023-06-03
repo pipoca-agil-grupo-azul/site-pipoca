@@ -8,16 +8,14 @@ export const StyledTestimoniesList = styled.footer`
     font-family: var(--font-family-2);
     font-family: 'Poppins', sans-serif;
 
-    .title__section-testimonies{
-        
-    }
     .subtitle-testimonies{
         font-size: 30px;
         font-weight: 300;
         margin-bottom: 55px;
     }
     h3{
-        font-size: 19.5px;
+        font-size: 36px;
+        font-weight: 500;
         letter-spacing: 5px;
     }
     .swiper-pagination-bullet {

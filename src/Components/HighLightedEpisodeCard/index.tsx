@@ -19,7 +19,7 @@ export const HighlightedEpisodeCard = ({ videoContent }: Props) => {
                     <p> Apresentado por <strong className="focused-text-primary-color"> Ibson Cabral </strong> </p>
                     {videoContent.coHost && <p> Co-Host: {videoContent.coHost} </p> }
                     <p> <strong> Convidados: {videoContent.guests} </strong> </p>
-                    {/* <p> DATA: 02/06/2023 </p> */}
+                    <p> DATA: 02/06/2023 </p> 
                 </div>
 
         </StyledContainerNextEpisode>

@@ -19,7 +19,7 @@ export const StyledInformationPreHeader = styled.div`
     }
 
     @media (max-width:1023px) {
-        .address{
+        .container__only-desktop{
             display: none;
         }
     }

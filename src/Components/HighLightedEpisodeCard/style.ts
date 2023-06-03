@@ -10,7 +10,7 @@ export const StyledContainerNextEpisode = styled.li`
         font-size: var(--title-size-small);
         font-weight: 700;
         align-self: flex-start;
-        text-align: justify;
+        text-align: start;
     }
 
     .container_youtube-embed{
@@ -23,7 +23,7 @@ export const StyledContainerNextEpisode = styled.li`
         display: flex;
         flex-direction: column;
         align-items: start;
-        gap: 20px;
+        gap: 5px;
         justify-content: start;
         max-width: 45%;
         margin: 5px;
