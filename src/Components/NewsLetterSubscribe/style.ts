@@ -12,8 +12,6 @@ export const StyledNewsletterSubscribe = styled.footer`
    
     margin: 0px auto;
     font-family: 'Poppins', sans-serif;
-        
-        
 
     h2{
         font-size: 64px;

@@ -4,6 +4,7 @@ import { Subscribe } from "../../Components/Subscribe";
 import { StyledHomePage } from "./style";
 import { BeAPartner } from "../../Components/BeAPartner";
 import { TestimoniesList } from "../../Components/TestimoniesCarousel";
+import pinkDetail from "../../assets/detail-pink.svg"
 
 export const HomePage = () => {
   return (
@@ -23,7 +24,16 @@ export const HomePage = () => {
       </section> 
 
       <section className="newletter-section">
-        <NewsletterSubscribe/>
+        <div>
+          <NewsletterSubscribe/>
+        </div>
+       {/*  <div>
+          <img src={pinkDetail} alt="" className="pink-details-1"/>
+        </div>
+        <div>
+          <img src={pinkDetail} alt="" className="pink-details-2"/>
+        </div> */}
+
       </section>
 
       <section className="subscribe-section">
