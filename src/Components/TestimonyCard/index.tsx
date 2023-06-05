@@ -1,7 +1,6 @@
 import { IVideoInfo } from "../../Interfaces/videosInterfaces";
 import { StyledTestimonyCard } from "./style";
 import redDetail from "../../assets/detail-red.svg"
-import yellowDetail from "../../assets/efeito-amarelo.svg"
 
 interface Props {
   videoContent: IVideoInfo;

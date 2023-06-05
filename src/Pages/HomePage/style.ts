@@ -24,7 +24,7 @@ export const StyledHomePage = styled.div`
     }
 
     .next-episode{
-        width: 80%;
+        width: 80vw;
 
         display:flex;
         justify-content: center;
@@ -55,54 +55,46 @@ export const StyledHomePage = styled.div`
         position: relative;
         z-index: 2;
     }
-/* 
-    .pink-details-1{
-        position: absolute;
-        top: -150px;
-        right: 30px;
-    }
-    .pink-details-2{
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        bottom: -65px;
-        right: 42%;
-        transform: rotate(45deg);
-        z-index: 0;
-    } */
 
     @media (max-width:1023px) {
+        .next-episode{
+
+        }
+        .next-episode iframe{
+            background-color: blue;
+        }
+        
         h1{
             font-size: var(--title-size-medium);
         }
         h2{
             font-size: var(--title-size-small-screens);
         }
-        .next-episode{
+  
+    }
+    /* @media (max-width:1023px) {
+        .next-episode iframe{
             width: 100%;
             display: flex;
             margin-left: 6.5%;
         }
-        .next-episode iframe{
-            align-self: center;
-        }
     }
 
     @media (min-width: 360px) {
-        .next-episode{
+        .next-episode iframe{
             margin-left: 8.5%;
         }
     }
     @media (min-width: 381px) {
-        .next-episode{
+        .next-episode iframe{
             margin-left: 8.8%;
         }
     }
     @media (min-width: 551px) and (max-width: 1024px) {
-        .next-episode {
+        .next-episode iframe{
         margin-left: 4.5%;
     }
-    }
+    } */
     
 
 `

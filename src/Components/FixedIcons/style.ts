@@ -7,7 +7,7 @@ export const StyledWhatsButton = styled.div`
     position: fixed;
     bottom: 15px;
     right: 15px;
-    z-index: 2;
+    z-index: 3;
     align-items: end;
 
     .paymeacoffe-btn{
@@ -30,7 +30,6 @@ export const StyledWhatsButton = styled.div`
         text-decoration: none;
         font-size: var(--font-size-regular);
         padding: 5px 30px;
-
         border-radius: var(--border-radius-default);
         
         font-weight: 600;
@@ -38,8 +37,6 @@ export const StyledWhatsButton = styled.div`
         border: 1px solid var(--color-primary);
         background-color: #FFCC33;
         box-shadow: var(--color-primary) 5px 5px 15px;
-
-
         position: relative;
         bottom: -25px;
         right: -45px;

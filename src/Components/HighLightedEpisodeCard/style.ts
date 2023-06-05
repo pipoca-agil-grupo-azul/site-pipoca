@@ -45,7 +45,6 @@ export const StyledContainerHighlightedEpisode = styled.li`
 
        .container_youtube-embed{
             width: 100%;
-
             display: flex;
         } 
     }

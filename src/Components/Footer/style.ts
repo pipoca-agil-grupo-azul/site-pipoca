@@ -92,7 +92,7 @@ export const StyledFooter = styled.footer`
         width: 100%;
 
         position: absolute;
-        bottom: 0;
+        bottom: 0px;
     }
     
     .container__reserved-rights{
@@ -125,7 +125,6 @@ export const StyledFooter = styled.footer`
 
 
     @media (max-width:1023px) {
-       
         display: flex;
         flex-direction: column;
     }

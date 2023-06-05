@@ -13,6 +13,9 @@ export const StyledTestimoniesList = styled.footer`
         font-weight: 300;
         margin-bottom: 55px;
     }
+    iframe{
+
+    }
     h3{
         font-size: 36px;
         font-weight: 500;
