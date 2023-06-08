@@ -4,6 +4,8 @@ import { AppRoutes } from './Routes/routes';
 import { Footer } from './Components/Footer';
 import { InformationPreHeader } from './Components/InformationPreHeader';
 import { FixedIcons } from './Components/FixedIcons';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
@@ -18,6 +20,19 @@ function App() {
       <AppRoutes />
 
       <Footer />
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   )
 }
