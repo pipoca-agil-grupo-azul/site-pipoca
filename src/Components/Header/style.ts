@@ -22,6 +22,11 @@ export const StyledHeader = styled.header`
         max-width: 5rem;
         cursor: pointer;
         max-height: 9vh;
+        transition: 400ms;
+    }
+    img:hover{
+        transform: scale(1.1);
+        
     }
 
     .hamburger{

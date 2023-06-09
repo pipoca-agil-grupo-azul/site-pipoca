@@ -5,6 +5,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaRegisterForm } from "./schema";
 import { IRegisterFormData } from "../../Context/@types";
 import { UserContext } from "../../Context/userContext";
+import { ButtonSubmit } from "../ButtonSubmit";
+import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
 
 export const RegisterForm = () => {
     
@@ -53,10 +55,17 @@ export const RegisterForm = () => {
                 />
                 <p> {errors.password?.message} </p>
 
-                <button type="submit"> 
-                    teste
-                </button>
+                <ButtonSubmit text={"Cadastre-se"}/>
             </form>
+
+            <div className="divider">
+                <p className="line"></p>
+                <p className="text"> ou </p>
+                <p className="line"></p>
+            </div>
+
+            <LoginWithSocialMedia/>
+
         </StyledRegisterForm>
     );
 };

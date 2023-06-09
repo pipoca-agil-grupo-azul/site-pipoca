@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const StyledLoginPage = styled.main`
     
     min-height: 70.1vh;
-    padding-top: 100px;
+
+    padding: 100px 0px;
     p{
         text-align: center;
     }

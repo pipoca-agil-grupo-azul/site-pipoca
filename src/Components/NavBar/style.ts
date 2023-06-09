@@ -59,8 +59,9 @@ export const StyledNavBar = styled.nav`
                 background-color: var(--color-grey-0);
                 color: var(--color-grey-900);
                 border: none;
-                font-weight: 100;
+                font-weight: 400;
                 box-shadow: none;
+                text-transform: inherit;
             }
             .login-btn:hover{
                 border: none;

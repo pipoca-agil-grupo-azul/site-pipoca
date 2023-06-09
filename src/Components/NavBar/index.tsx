@@ -10,8 +10,7 @@ export const NavBar = () => {
             <Link to="/"> Blog </Link>
             <Link to="/"> Projetos </Link>
             <Link to="/contato"> Contato </Link>
-            <Link to="/login" className="login-btn">  LOGIN </Link>
-             
+            <Link to="/login" className="login-btn">  Conecte-se </Link>
         </StyledNavBar>
     );
 };
