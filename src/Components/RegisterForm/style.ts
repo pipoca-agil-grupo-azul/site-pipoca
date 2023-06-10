@@ -7,7 +7,7 @@ export const StyledRegisterForm = styled.div`
     max-width: 90%;
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
-    
+
     form{
         display: flex;
         flex-direction: column;
@@ -34,8 +34,10 @@ export const StyledRegisterForm = styled.div`
         height: 0.1px;
         background-color: #CDCFD2;
         }
-    .divider .text{
 
+    @media(max-width:1023px) {
+     h1{
+        font-size: 2rem;
+     }   
     }
-    
 `;

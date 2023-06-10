@@ -19,5 +19,6 @@ export interface IRegisterFormData {
     password: string;
     email: string;
     dateBirth:string;
+    confirmPassword:string;
 }
 

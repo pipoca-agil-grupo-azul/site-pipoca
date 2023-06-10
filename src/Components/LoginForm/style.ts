@@ -7,9 +7,6 @@ export const StyledLoginForm = styled.div`
     width: 500px;
     max-width: 90%;
     margin: 0 auto;
-   /*  border: 1px solid var(--color-grey-300);
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75); */
 
     form{
         display: flex;
@@ -37,7 +34,9 @@ export const StyledLoginForm = styled.div`
         height: 0.1px;
         background-color: #CDCFD2;
         }
-    .divider .text{
-
+    @media(max-width:1023px) {
+     h1{
+        font-size: 2rem;
+     }   
     }
 `;

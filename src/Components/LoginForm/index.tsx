@@ -26,7 +26,7 @@ export const LoginForm = () => {
         <StyledLoginForm >
             <h1> Entre e divirta-se! </h1>
             <form action="" onSubmit={handleSubmit(submitLogin)}>
-                <label htmlFor="email"> Email </label>
+                <label htmlFor="email"> Email <span> {errors.email?.message} </span></label>
                 <input
                     id="email"
                     name="email"
@@ -34,8 +34,8 @@ export const LoginForm = () => {
                     placeholder="Digite seu email"
                     {...register("email")}
                 />
-                <p> {errors.email?.message} </p>
-                <label htmlFor="password"> Senha </label>
+                
+                <label htmlFor="password"> Senha <span> {errors.password?.message} </span></label>
                 <input
                     id="password"
                     name="password"
@@ -43,7 +43,7 @@ export const LoginForm = () => {
                     placeholder="Digite sua senha"
                     {...register("password")}
                 />
-                <p> {errors.password?.message} </p>
+                
                 <ButtonSubmit text={"Entre"}/>
                 
             </form>

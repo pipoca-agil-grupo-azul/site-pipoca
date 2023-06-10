@@ -27,7 +27,7 @@ export const RegisterForm = () => {
         <StyledRegisterForm >
             <h1> Cadastre-se </h1>
             <form action="" onSubmit={ handleSubmit(submitRegister) }>
-                <label htmlFor="name"> Nome completo </label>
+                <label htmlFor="name"> Nome completo <span> {errors.name?.message} </span></label>
                 <input
                     id="name"
                     name="name"
@@ -35,16 +35,15 @@ export const RegisterForm = () => {
                     placeholder="Digite seu nome"
                     {...register("name")}
                 />
-                <p> {errors.name?.message} </p>
-                <label htmlFor="dateBirth"> Data de nascimento </label>
+                <label htmlFor="dateBirth"> Data de nascimento <span> {errors.dateBirth?.message} </span></label>
                 <input
                     id="dateBirth"
                     name="dateBirth"
                     type="date"
                     {...register("dateBirth")}
                 />
-                <p> {errors.dateBirth?.message} </p>
-                <label htmlFor="email"> Email </label>
+               
+                <label htmlFor="email"> Email  <span> {errors.email?.message} </span></label>
                 <input
                     id="email"
                     name="email"
@@ -52,9 +51,8 @@ export const RegisterForm = () => {
                     placeholder="Digite seu email"
                     {...register("email")}
                 />
-                <p> {errors.email?.message} </p>
                 
-                <label htmlFor="password"> Senha (8 ou mais caracteres) </label>
+                <label htmlFor="password"> Senha (8 ou mais caracteres) <span> {errors.password?.message}  </span></label>
                 <input
                     id="password"
                     name="password"
@@ -62,8 +60,17 @@ export const RegisterForm = () => {
                     placeholder="Digite sua senha"
                     {...register("password")}
                 />
-                <p> {errors.password?.message} </p>
-
+                
+                <label htmlFor="confirmPassword"> Confirmar senha <span> {errors.confirmPassword?.message} </span> </label> 
+                <input
+                    id="confirmPassword"
+                    name="password"
+                    type="password"
+                    placeholder="Confirme sua senha"
+                    {...register("confirmPassword")}
+                    
+                />
+                
                 <ButtonSubmit text={"Cadastre-se"}/>
             </form>
 

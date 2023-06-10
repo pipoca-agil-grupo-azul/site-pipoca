@@ -9,5 +9,9 @@ export const schemaRegisterForm = yup
       .required("Email obrigatório!")
       .email("Preencha com um e-mail válido"),
     password: yup.string().required("Preencha o campo"),
+    confirmPassword: yup
+            .string()
+            .oneOf([yup.ref("password")], "Falha na confirmação da senha!")
+            .required("Confirme a senha!"),
   })
   .required();
