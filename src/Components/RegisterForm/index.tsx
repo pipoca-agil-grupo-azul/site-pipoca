@@ -27,27 +27,36 @@ export const RegisterForm = () => {
         <StyledRegisterForm >
             <h1> Cadastre-se </h1>
             <form action="" onSubmit={ handleSubmit(submitRegister) }>
+                <label htmlFor="name"> Nome completo </label>
                 <input
+                    id="name"
                     name="name"
                     type="text"
                     placeholder="Digite seu nome"
                     {...register("name")}
                 />
                 <p> {errors.name?.message} </p>
-                 <input
+                <label htmlFor="dateBirth"> Data de nascimento </label>
+                <input
+                    id="dateBirth"
                     name="dateBirth"
                     type="date"
                     {...register("dateBirth")}
                 />
                 <p> {errors.dateBirth?.message} </p>
+                <label htmlFor="email"> Email </label>
                 <input
+                    id="email"
                     name="email"
                     type="email"
                     placeholder="Digite seu email"
                     {...register("email")}
                 />
                 <p> {errors.email?.message} </p>
+                
+                <label htmlFor="password"> Senha (8 ou mais caracteres) </label>
                 <input
+                    id="password"
                     name="password"
                     type="password"
                     placeholder="Digite sua senha"
@@ -60,7 +69,7 @@ export const RegisterForm = () => {
 
             <div className="divider">
                 <p className="line"></p>
-                <p className="text"> ou </p>
+                <p className="text"></p>
                 <p className="line"></p>
             </div>
 

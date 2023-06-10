@@ -14,7 +14,7 @@ export const LoginPage = () => {
             
            <LoginForm />
 
-           <p> Não tem conta? <span onClick={handleCadastroClick}> Se cadastre! </span></p>
+           <p> Novo no Pipoca Ágil?  <span onClick={handleCadastroClick}> Cadastre-se! </span></p>
 
         </StyledLoginPage>
     );

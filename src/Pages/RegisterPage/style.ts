@@ -4,7 +4,8 @@ export const StyledRegisterPage = styled.main`
     
     min-height: 70.1vh;
 
-    padding: 100px 0px;
+    padding: 0px 0px 100px 0px;
+    font-family: 'Roboto', sans-serif;
     
     p{
         text-align: center;

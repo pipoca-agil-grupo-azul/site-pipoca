@@ -27,7 +27,7 @@ export const InformationPreHeader = () => {
 
       <div>
         <img src={iconPhone} alt="" />
-        <p> +55 21 91234-5678 </p>
+        <p> +55 21 97143-9655 </p>
         <img src={iconMail} alt="" />
         <p> contato@email.com </p>
       </div>

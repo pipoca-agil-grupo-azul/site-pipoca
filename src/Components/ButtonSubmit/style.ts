@@ -8,12 +8,13 @@ export const StyledButton = styled.button`
         background-color: var(--color-primary);
         padding: 10px;
         font-weight: 500;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Roboto', sans-serif;
         transition: 400ms;
     &&:hover{
         box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.5);
         background-color: #FFCC33;
         color: var(--color-primary);
         border: 1px solid var(--color-primary);
+        transform: scale(1.05);
     }
 `;

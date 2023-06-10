@@ -6,7 +6,8 @@ export const StyledRegisterForm = styled.div`
     width: 500px;
     max-width: 90%;
     margin: 0 auto;
-
+    font-family: 'Roboto', sans-serif;
+    
     form{
         display: flex;
         flex-direction: column;
@@ -26,6 +27,7 @@ export const StyledRegisterForm = styled.div`
         display: flex;
         align-items: center;
         text-align: center;
+        margin-top: 30px;
     }
     .divider .line {
         flex-grow: 0.5;

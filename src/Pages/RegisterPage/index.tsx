@@ -14,7 +14,7 @@ export const RegisterPage = () => {
         <StyledRegisterPage>
            
            <RegisterForm/>
-           <p> Ja possui conta? <span onClick={handleCadastroClick}> Faça login! </span> </p>
+           <p> Opa! Já é um Pipoca Ágil?  <span onClick={handleCadastroClick}> Faça login! </span> </p>
         </StyledRegisterPage>
     );
 };

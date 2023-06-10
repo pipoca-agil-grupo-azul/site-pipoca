@@ -10,7 +10,6 @@ export const StyledLoginWithSocialMedia = styled.div`
     gap: 20px;
     button{
         border-radius: 24px;
-        box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.5);
         border: 1px solid transparent;
 
         display: flex;
@@ -21,13 +20,16 @@ export const StyledLoginWithSocialMedia = styled.div`
         min-width: 100%;
         min-height: 42px;
         transition: 400ms;
+        font-family: 'Roboto', sans-serif;
     }
     .btn-linkedin-login{
         color: var(--color-grey-0);
-        background-color: blue;
+        background-color: #2A66BC;
+
     }
 
     button:hover{
        transform:scale(1.05);
+       box-shadow: 1px 1px 6px 0px rgba(0,0,0,0.5);
     }
 `;
