@@ -14,7 +14,6 @@ interface IUserContext {
     handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
     handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
     handleLogout: () => void;
-    handleUpdateUser:(formData:any) => Promise<void>;
 }
 
 export const UserContext = createContext({} as IUserContext);
@@ -29,9 +28,9 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         console.log(formData)
         try {
             const response = await baseURL.post("/login", formData);
-            console.log(response.data)
             localStorage.setItem("@USERTOKEN", response.data.accessToken);
             localStorage.setItem("@USERID", response.data.user.id);
+            console.log(response.data)
             setUser(response.data);
             toast.update(toastLogin, {
                 render: `Bem vindo ${response.data.user.name}`,
@@ -41,7 +40,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
                 closeOnClick: true,
             });
             console.log(user)
-            /* navigate(`/`); */
+            navigate(`/`);
         } catch (error) {
             toast.update(toastLogin, {
                 render: `Erro ao efetuar o login reveja suas informações`,
@@ -85,39 +84,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         navigate("/");
     };
 
-
-    const handleUpdateUser = async (formData:any) => {
-        const userId = localStorage.getItem("@USERID");
-        const token = localStorage.getItem("@USERTOKEN");
-
-        const toastUpdateProfile = toast.loading("Atualizando suas informações");
-        try {
-            const response = await baseURL.put(`/users/${userId}`, formData, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-            setUser(response.data);
-            
-            toast.update(toastUpdateProfile, {
-                render: "Informações atualizadas",
-                type: "success",
-                isLoading: false,
-                autoClose: 3000,
-                closeOnClick: true,
-            });
-        } catch (error) {
-            console.error(error);
-            toast.update(toastUpdateProfile, {
-                render: "Erro ao tentar atualizar as informações tente novamente",
-                type: "error",
-                isLoading: false,
-                autoClose: 3000,
-                closeOnClick: true,
-            });
-        }
-    };
-
     return (
         <UserContext.Provider
             value={{
@@ -125,7 +91,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
                 handleSubmitLogin,
                 handleSubmitRegister,
                 handleLogout,
-                handleUpdateUser,
             }}
         >
             {children}
