@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { StyledNavBar } from "./style";
 
-export const NavBar = () => {
+export const NavBar = ({onClickFunction}) => {
  
     return (
         <StyledNavBar>
-            <Link to="/"> Home </Link>
-            <Link to="/"> Sobre </Link>
-            <Link to="/"> Blog </Link>
-            <Link to="/"> Projetos </Link>
-            <Link to="/contato"> Contato </Link>
-            <Link to="/login" className="login-btn">  Conecte-se </Link>
+            <Link to="/" onClick={onClickFunction}> Home </Link>
+            <Link to="/" onClick={onClickFunction}> Sobre </Link>
+            <Link to="/" onClick={onClickFunction}> Blog </Link>
+            <Link to="/" onClick={onClickFunction}> Projetos </Link>
+            <Link to="/contato" onClick={onClickFunction}> Contato </Link>
+            <Link to="/login" className="login-btn" onClick={onClickFunction}>  Conecte-se </Link>
         </StyledNavBar>
     );
 };

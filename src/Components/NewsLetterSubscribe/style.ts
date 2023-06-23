@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledNewsletterSubscribe = styled.footer`
+export const StyledNewsletterSubscribe = styled.div`
 
     display: flex;
     align-items: center;

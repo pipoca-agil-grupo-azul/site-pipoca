@@ -1,5 +1,5 @@
 import { StyledBeAPartner } from "./style";
-import ibsonImg from "../../assets/ibson-apontando.svg";
+import ibsonImg from "../../assets/img-ibson-half.svg";
 import petalsImg from "../../assets/petalas.svg";
 import petalsRightImg from "../../assets/petalas-right.svg";
 
@@ -21,9 +21,12 @@ export const BeAPartner = () => {
           <a href="" className="partner-btn">
             Vamos conversar!
           </a>
+          <div>
+            <img src={ibsonImg} alt="" className="ibson-img" />
+          </div>
         </div>
 
-        <img src={ibsonImg} alt="" className="ibson-img" />
+       
       
       <img src={petalsRightImg} alt="" className="petals-img-right" />
     </StyledBeAPartner>

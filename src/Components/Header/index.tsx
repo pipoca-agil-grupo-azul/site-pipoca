@@ -23,7 +23,7 @@ export const Header = () => {
             <img src={logoImg} alt="" onClick={() => { goToHome()}}/>
                 
             <div className={navBarVisibility}>
-                <NavBar />
+                <NavBar onClickFunction={() => menuVisibility()}/>
             </div>
            
             <div className="hamburger" onClick={() => menuVisibility()}>

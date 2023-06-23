@@ -40,11 +40,8 @@ export const StyledBeAPartner = styled.div`
     }
     .ibson-img{
         z-index: 1;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 80%;
-        max-height: 80%;
+        position: relative;
+        bottom: -104px;
     }
     
     .partner-btn{
@@ -81,6 +78,7 @@ export const StyledBeAPartner = styled.div`
             align-items: center;
             gap: 20px;
             max-width: 99vw;
+
         }
 
         .text-be-a-partner{
@@ -104,27 +102,19 @@ export const StyledBeAPartner = styled.div`
             display: none;
         }  
     }
-    @media (min-width: 1023px) and (max-width: 1499px) {
-        .container__be-a-partner{
-            
-        }
+    @media (min-width:1024px){
         .partner-btn{
-            width: 200px;
-            text-align: center;
-            z-index: 22;
+           min-width: 180px;
+           text-align: center;
         }
-        .ibson-img{
-            
-            right: -150px;
-            height: 70%;
+        .container__be-a-partner{
+            display: flex;
+            gap: 40px;
         }
     }
+   
+    
 
-    @media (min-width: 1500px) and (max-width: 1900px) {
-        .ibson-img{
-            right: -20px;
-            height: 75%;
-        }
-    }
+   
 `;
 

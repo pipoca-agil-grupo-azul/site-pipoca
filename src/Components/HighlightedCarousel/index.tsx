@@ -31,7 +31,7 @@ export const HighLightedCarousel = () => {
         >
 
       {fakeVideos.map((video) => (
-        <HighlightedEpisodeCard videoContent={video} />
+        <HighlightedEpisodeCard key={video.id} videoContent={video} />
       ))}
       
       </Carousel>

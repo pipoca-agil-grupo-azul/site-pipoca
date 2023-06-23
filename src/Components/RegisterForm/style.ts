@@ -19,10 +19,13 @@ export const StyledRegisterForm = styled.div`
     p {
         color: var(--color-secondary);
     }
+
     input{
         border: 1px solid black;
         padding: 20px;
+        width: 90%;
     }
+
     .divider{
         display: flex;
         align-items: center;

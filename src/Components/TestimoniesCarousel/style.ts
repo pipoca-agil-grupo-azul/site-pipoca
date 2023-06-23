@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledTestimoniesList = styled.footer`
+export const StyledTestimoniesList = styled.div`
 
     width: 80vw;
 
