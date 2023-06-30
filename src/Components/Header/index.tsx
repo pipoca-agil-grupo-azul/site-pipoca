@@ -6,7 +6,11 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import { NavBar } from "../NavBar";
 
-export const Header = () => {
+interface HeaderProps {
+  style?: React.CSSProperties;
+}
+
+export const Header = ({ style }: HeaderProps) => {
   const navigate = useNavigate();
 
   const [navBarVisibility, setNavBarVisibility] = useState("hidden");
@@ -22,7 +26,7 @@ export const Header = () => {
   };
 
   return (
-    <StyledHeader>
+    <StyledHeader style={style}>
       <img
         src={logoImg}
         alt=""
