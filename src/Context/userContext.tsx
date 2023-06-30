@@ -28,10 +28,13 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     console.log(formData);
     try {
       const response = await baseURL.post("/login", formData);
+
       localStorage.setItem("@USERTOKEN", response.data.accessToken);
       localStorage.setItem("@USERID", response.data.user.id);
+
       console.log(response.data);
       setUser(response.data);
+
       toast.update(toastLogin, {
         render: `Bem vindo ${response.data.user.name}`,
         type: "success",
@@ -40,6 +43,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         closeOnClick: true,
       });
       console.log(user);
+
       navigate(`/`);
     } catch (error) {
       toast.update(toastLogin, {
@@ -57,6 +61,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     console.log(formData);
     try {
       const response = await baseURL.post("/user", formData);
+      
       console.log(response);
       toast.update(toastRegister, {
         render: "Cadastro realizado com sucesso",
