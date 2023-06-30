@@ -1,12 +1,12 @@
 import { StyledExternalLink } from "./style";
 
 interface Props {
-    name: string;
-    img: string;
-    externalLink:string
+  name: string;
+  img: string;
+  externalLink: string;
 }
 
-export const ExternalLink = ({name, img, externalLink}:Props) => {
+export const ExternalLink = ({ name, img, externalLink }: Props) => {
   return (
     <StyledExternalLink>
       <a href={externalLink} target="_blank">

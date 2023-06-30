@@ -1,42 +1,46 @@
 import styled from "styled-components";
 
 export const StyledLoginForm = styled.div`
+  padding: 30px;
+  width: 500px;
+  max-width: 90%;
+  margin: 0 auto;
 
-    padding: 30px;
-    
-    width: 500px;
-    max-width: 90%;
-    margin: 0 auto;
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 18px;
+    font-weight: 500;
+  }
 
-    form{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: var(--border-radius-default);
+  }
 
-        border-radius: var(--border-radius-default);
+  p {
+    color: var(--color-secondary);
+  }
+  input {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .divider .line {
+    flex-grow: 0.5;
+    height: 0.1px;
+    background-color: #cdcfd2;
+  }
+  @media (max-width: 1023px) {
+    h1 {
+      font-size: 2rem;
     }
-    
-    p {
-        color: var(--color-secondary);
-    }
-    input{
-        border: 1px solid black;
-        padding: 20px;
-    }
-    .divider{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        margin-top: 30px;
-    }
-    .divider .line {
-        flex-grow: 0.5;
-        height: 0.1px;
-        background-color: #CDCFD2;
-        }
-    @media(max-width:1023px) {
-     h1{
-        font-size: 2rem;
-     }   
-    }
+  }
 `;

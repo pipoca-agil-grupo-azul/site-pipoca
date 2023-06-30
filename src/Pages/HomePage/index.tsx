@@ -19,14 +19,13 @@ export const HomePage = () => {
       </section>
 
       <section className="third-section__last-episodes">
-        < TestimoniesList />
-      </section> 
+        <TestimoniesList />
+      </section>
 
       <section className="newletter-section">
         <div>
-          <NewsletterSubscribe/>
+          <NewsletterSubscribe />
         </div>
-
       </section>
 
       <section className="subscribe-section">
@@ -34,10 +33,8 @@ export const HomePage = () => {
       </section>
 
       <section className="partnership-section">
-        <BeAPartner/>
+        <BeAPartner />
       </section>
-
-      
     </StyledHomePage>
   );
 };

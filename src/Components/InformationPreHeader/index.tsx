@@ -4,15 +4,20 @@ import iconPhone from "../../assets/icon _phone.svg";
 import iconMail from "../../assets/icon _mail.svg";
 
 export const InformationPreHeader = () => {
-  
   const getFormattedDate = (): string => {
-  
     const currentDate: Date = new Date();
-    const day: string = currentDate.toLocaleDateString('pt-BR', { day: 'numeric' });
-    const month: string = currentDate.toLocaleDateString('pt-BR', { month: 'long' });
-    const year: string = currentDate.toLocaleDateString('pt-BR', { year: 'numeric' });
+    const day: string = currentDate.toLocaleDateString("pt-BR", {
+      day: "numeric",
+    });
+    const month: string = currentDate.toLocaleDateString("pt-BR", {
+      month: "long",
+    });
+    const year: string = currentDate.toLocaleDateString("pt-BR", {
+      year: "numeric",
+    });
 
-    const capitalizedMonth: string = month.charAt(0).toUpperCase() + month.slice(1);
+    const capitalizedMonth: string =
+      month.charAt(0).toUpperCase() + month.slice(1);
 
     return `${day} de ${capitalizedMonth} ${year}`;
   };
@@ -22,7 +27,7 @@ export const InformationPreHeader = () => {
       <div className="container__only-desktop">
         <img src={iconPin} alt="" />
         <p> Rio de Janeiro </p>
-        <p>  {getFormattedDate()} </p>
+        <p> {getFormattedDate()} </p>
       </div>
 
       <div>

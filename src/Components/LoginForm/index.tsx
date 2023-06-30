@@ -9,51 +9,53 @@ import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
 
 export const LoginForm = () => {
-    
-    const { handleSubmitLogin } = useContext(UserContext);
+  const { handleSubmitLogin } = useContext(UserContext);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm<ILoginFormData>({ resolver: yupResolver(schemaLoginForm) });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ILoginFormData>({ resolver: yupResolver(schemaLoginForm) });
 
-    const submitLogin: SubmitHandler<ILoginFormData> = (formData) => {
-        handleSubmitLogin(formData);
-    };
+  const submitLogin: SubmitHandler<ILoginFormData> = (formData) => {
+    handleSubmitLogin(formData);
+  };
 
-    return (
-        <StyledLoginForm >
-            <h1> Entre e divirta-se! </h1>
-            <form action="" onSubmit={handleSubmit(submitLogin)}>
-                <label htmlFor="email"> Email <span> {errors.email?.message} </span></label>
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Digite seu email"
-                    {...register("email")}
-                />
-                
-                <label htmlFor="password"> Senha <span> {errors.password?.message} </span></label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Digite sua senha"
-                    {...register("password")}
-                />
-                
-                <ButtonSubmit text={"Entre"}/>
-                
-            </form>
-            <div className="divider">
-                <p className="line"></p>
-                <p className="text"> </p>
-                <p className="line"></p>
-            </div>
+  return (
+    <StyledLoginForm>
+      <h1> Entre e divirta-se! </h1>
+      <form action="" onSubmit={handleSubmit(submitLogin)}>
+        <label htmlFor="email">
+          Email <span> {errors.email?.message} </span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Digite seu email"
+          {...register("email")}
+        />
 
-            <LoginWithSocialMedia/>
-        </StyledLoginForm>
-    );
+        <label htmlFor="password">
+          Senha <span> {errors.password?.message} </span>
+        </label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Digite sua senha"
+          {...register("password")}
+        />
+
+        <ButtonSubmit text={"Entre"} />
+      </form>
+      <div className="divider">
+        <p className="line"></p>
+        <p className="text"> </p>
+        <p className="line"></p>
+      </div>
+
+      <LoginWithSocialMedia />
+    </StyledLoginForm>
+  );
 };

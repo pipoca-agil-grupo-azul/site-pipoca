@@ -5,11 +5,11 @@ import App from "./App";
 import { UserProvider } from "./Context/userContext";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <UserProvider>
-                <App />
-            </UserProvider>
-        </BrowserRouter>
-    </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <UserProvider>
+        <App />
+      </UserProvider>
+    </BrowserRouter>
+  </React.StrictMode>
 );

@@ -11,23 +11,22 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <section className="container__newsletter">
-
-       <div className="container__logo">
-        <img src={logoImg} alt="" className="logo-img"/>
-        <p> Pipoca Ágil</p>
-       </div>
+        <div className="container__logo">
+          <img src={logoImg} alt="" className="logo-img" />
+          <p> Pipoca Ágil</p>
+        </div>
 
         <h2> Receba nossa newsletter </h2>
 
         <form action="">
           <input type="text" placeholder="Email" />
-          <button type="submit" className="submit-button-newsletter-footer">  CADASTRAR </button>
+          <button type="submit" className="submit-button-newsletter-footer">
+            CADASTRAR
+          </button>
         </form>
-
       </section>
 
       <section className="container__follow-us">
-        
         <div className="container__informations">
           <div className="information-div">
             <img src={iconPhonePhoneBlack} alt="icon-phone" />
@@ -42,7 +41,6 @@ export const Footer = () => {
 
         <h2> Siga a gente</h2>
         <div className="links-social-media-footer">
-
           <a href="https://www.linkedin.com/in/ibson-cabral/" target="_blank">
             <img src={iconLinkedin} alt="" />
           </a>
@@ -55,21 +53,17 @@ export const Footer = () => {
           <a href="https://www.youtube.com/@PipocaAgil" target="_blank">
             <img src={iconYoutube} alt="" />
           </a>
-
         </div>
       </section>
 
       <section className="bottom-footer">
-      
         <div className="copyright">
           <p> Política de Privacidade & Cookies </p>
         </div>
-        
+
         <div className="container__reserved-rights">
           <p> © 2023 Pipoca Ágil - Todos os direitos reservados. </p>
         </div>
-    
-
       </section>
     </StyledFooter>
   );

@@ -1,21 +1,20 @@
-import './Styles/index.css'
+import "./Styles/index.css";
 import { Header } from "./Components/Header";
-import { AppRoutes } from './Routes/routes';
-import { Footer } from './Components/Footer';
-import { InformationPreHeader } from './Components/InformationPreHeader';
-import { FixedIcons } from './Components/FixedIcons';
+import { AppRoutes } from "./Routes/routes";
+import { Footer } from "./Components/Footer";
+import { InformationPreHeader } from "./Components/InformationPreHeader";
+import { FixedIcons } from "./Components/FixedIcons";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-
   return (
     <div>
-      <InformationPreHeader/>
+      <InformationPreHeader />
 
       <Header />
 
-      <FixedIcons/>
+      <FixedIcons />
 
       <AppRoutes />
 
@@ -34,7 +33,7 @@ function App() {
         theme="light"
       />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

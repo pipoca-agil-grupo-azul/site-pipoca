@@ -1,24 +1,23 @@
 export interface IChildrenProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 export interface IUser {
-    id: number | null | undefined;
-    email: string;
-    name: string;
-    dateBirth:string;
+  id: number | null | undefined;
+  email: string;
+  name: string;
+  dateBirth: string;
 }
 
 export interface ILoginFormData {
-    email: string;
-    password: string;
+  email: string;
+  password: string;
 }
 
 export interface IRegisterFormData {
-    name: string;
-    password: string;
-    email: string;
-    dateBirth:string;
-    confirmPassword:string;
+  name: string;
+  password: string;
+  email: string;
+  dateBirth: string;
+  confirmPassword: string;
 }
-

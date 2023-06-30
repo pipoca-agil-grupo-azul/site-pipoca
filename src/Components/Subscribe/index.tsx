@@ -5,7 +5,7 @@ export const Subscribe = () => {
   return (
     <StyledSubscribe>
       <h2> Se inscreva: </h2>
-      <WhereToWatch/>
+      <WhereToWatch />
     </StyledSubscribe>
   );
 };

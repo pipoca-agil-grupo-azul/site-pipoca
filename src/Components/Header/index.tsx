@@ -1,3 +1,4 @@
+import "../../Styles/index.css";
 import { StyledHeader } from "./style";
 import logoImg from "../../assets/pipoca-logo.svg";
 import { useNavigate } from "react-router-dom";
@@ -6,30 +7,37 @@ import { useState } from "react";
 import { NavBar } from "../NavBar";
 
 export const Header = () => {
-    const navigate = useNavigate();
-    
-    const [navBarVisibility, setNavBarVisibility] = useState("hidden");
+  const navigate = useNavigate();
 
-    const goToHome = () => {
-        navigate("/");
-    };
+  const [navBarVisibility, setNavBarVisibility] = useState("hidden");
 
-    const menuVisibility = () => {
-        navBarVisibility == "hidden" ? setNavBarVisibility("visible") : setNavBarVisibility("hidden");
-    };
+  const goToHome = () => {
+    navigate("/");
+  };
 
-    return (
-        <StyledHeader>
-            <img src={logoImg} alt="" onClick={() => { goToHome()}}/>
-                
-            <div className={navBarVisibility}>
-                <NavBar onClickFunction={() => menuVisibility()}/>
-            </div>
-           
-            <div className="hamburger" onClick={() => menuVisibility()}>
-                {" "}
-                <FaBars size={35} color={"black"} />{" "}
-            </div>
-        </StyledHeader>
-    );
+  const menuVisibility = () => {
+    navBarVisibility == "hidden"
+      ? setNavBarVisibility("visible")
+      : setNavBarVisibility("hidden");
+  };
+
+  return (
+    <StyledHeader>
+      <img
+        src={logoImg}
+        alt=""
+        onClick={() => {
+          goToHome();
+        }}
+      />
+
+      <div className={navBarVisibility}>
+        <NavBar onClickFunction={() => menuVisibility()} />
+      </div>
+
+      <div className="hamburger" onClick={() => menuVisibility()}>
+        <FaBars size={35} color={"black"} />
+      </div>
+    </StyledHeader>
+  );
 };
