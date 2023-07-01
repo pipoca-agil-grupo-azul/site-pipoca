@@ -1,23 +1,27 @@
-import "./Styles/index.css";
-import { Header } from "./Components/Header";
-import { AppRoutes } from "./Routes/routes";
-import { Footer } from "./Components/Footer";
-import { InformationPreHeader } from "./Components/InformationPreHeader";
-import { FixedIcons } from "./Components/FixedIcons";
-import { ToastContainer } from "react-toastify";
 import { useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FixedIcons } from "./Components/FixedIcons";
+import { Footer } from "./Components/Footer";
+import { Header } from "./Components/Header";
+import { InformationPreHeader } from "./Components/InformationPreHeader";
+import { AppRoutes } from "./Routes/routes";
+import "./Styles/index.css";
 
 function App() {
   const { pathname } = useLocation();
 
-  const options = {
-    "/login": <Header style={{ display: "None" }} />,
-    "/cadastro": <Header style={{ display: "None" }} />,
-    "/": <Header />,
-  };
-
   const showHeader = (URLValue: string) => {
+    const options = {
+      "/login": <Header style={{ display: "None" }} />,
+      "/cadastro": <Header style={{ display: "None" }} />,
+      "/": <Header />,
+      "/about": <Header />,
+      "/blog": <Header />,
+      "/projects": <Header />,
+      "/contato": <Header />,
+    };
+
     if (options[URLValue]) {
       return options[URLValue];
     }
