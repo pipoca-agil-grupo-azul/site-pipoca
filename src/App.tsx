@@ -9,25 +9,6 @@ import { AppRoutes } from "./Routes/routes";
 import "./Styles/index.css";
 
 function App() {
-  const { pathname } = useLocation();
-
-  const showHeader = (URLValue: string) => {
-    const options = {
-      "/login": <Header style={{ display: "None" }} />,
-      "/cadastro": <Header style={{ display: "None" }} />,
-      "/": <Header />,
-      "/about": <Header />,
-      "/blog": <Header />,
-      "/projects": <Header />,
-      "/contato": <Header />,
-    };
-
-    if (options[URLValue]) {
-      return options[URLValue];
-    }
-    return options[URLValue];
-  };
-
   return (
     <div>
       <InformationPreHeader />
