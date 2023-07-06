@@ -1,16 +1,19 @@
-import "../../Styles/index.css";
-import { StyledHeader } from "./style";
-import logoImg from "../../assets/pipoca-logo.svg";
-import { useNavigate } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
 import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../Context/hooks/useAuth";
+import "../../Styles/index.css";
+import logoImg from "../../assets/pipoca-logo.svg";
 import { NavBar } from "../NavBar";
+import { StyledHeader } from "./style";
 
 interface HeaderProps {
   style?: React.CSSProperties;
 }
 
 export const Header = ({ style }: HeaderProps) => {
+  const { user } = useAuth();
+
   const navigate = useNavigate();
 
   const [navBarVisibility, setNavBarVisibility] = useState("hidden");

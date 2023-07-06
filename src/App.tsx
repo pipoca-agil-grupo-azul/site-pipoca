@@ -32,7 +32,7 @@ function App() {
     <div>
       <InformationPreHeader />
 
-      {showHeader(pathname)}
+      {<Header />}
 
       <FixedIcons />
 
