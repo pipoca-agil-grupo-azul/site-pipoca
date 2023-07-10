@@ -13,9 +13,8 @@ export const RegisterPage = () => {
     <StyledRegisterPage>
       <RegisterForm />
       <p>
-        {" "}
-        Opa! Já é um Pipoca Ágil?{" "}
-        <span onClick={handleCadastroClick}> Faça login! </span>{" "}
+        Opa! Já é um Pipoca Ágil?
+        <span onClick={handleCadastroClick}> Faça login! </span>
       </p>
     </StyledRegisterPage>
   );

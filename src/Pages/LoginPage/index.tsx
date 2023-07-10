@@ -1,6 +1,6 @@
-import { StyledLoginPage } from "./style";
-import { LoginForm } from "../../Components/LoginForm";
 import { useNavigate } from "react-router-dom";
+import { LoginForm } from "../../Components/LoginForm";
+import { StyledLoginPage } from "./style";
 
 export const LoginPage = () => {
   const navigate = useNavigate();

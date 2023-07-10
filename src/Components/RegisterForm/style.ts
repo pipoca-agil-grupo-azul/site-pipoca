@@ -7,6 +7,12 @@ export const StyledRegisterForm = styled.div`
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
 
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
   form {
     display: flex;
     flex-direction: column;

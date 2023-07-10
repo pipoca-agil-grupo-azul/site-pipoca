@@ -1,15 +1,14 @@
-import { StyledRegisterForm } from "./style";
-import { useContext } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaRegisterForm } from "./schema";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { IRegisterFormData } from "../../Context/@types";
-import { UserContext } from "../../Context/userContext";
+import useAuth from "../../Context/hooks/useAuth";
 import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
+import { schemaRegisterForm } from "./schema";
+import { StyledRegisterForm } from "./style";
 
 export const RegisterForm = () => {
-  const { handleSubmitRegister } = useContext(UserContext);
+  const { handleSubmitRegister } = useAuth();
 
   const {
     register,

@@ -7,6 +7,7 @@ export interface IUser {
   email: string;
   name: string;
   dateBirth: string;
+  isPremium: boolean;
 }
 
 export interface ILoginFormData {
