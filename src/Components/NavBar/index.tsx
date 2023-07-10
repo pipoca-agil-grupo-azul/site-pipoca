@@ -1,27 +1,30 @@
-import { Link } from "react-router-dom";
+import useAuth from "../../Context/hooks/useAuth";
+import DynamicHeaderWithAuthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithAuthenticatedAndNotPremiumUser";
+import DynamicHeaderWithUnauthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithUnauthenticatedUser";
 import { StyledNavBar } from "./style";
 
 export const NavBar = ({ onClickFunction }) => {
-  return (
-    <StyledNavBar>
-      <Link to="/" onClick={onClickFunction}>
-        Home
-      </Link>
-      <Link to="/about" onClick={onClickFunction}>
-        Sobre
-      </Link>
-      <Link to="/blog" onClick={onClickFunction}>
-        Blog
-      </Link>
-      <Link to="/projects" onClick={onClickFunction}>
-        Projetos
-      </Link>
-      <Link to="/contato" onClick={onClickFunction}>
-        Contato
-      </Link>
-      <Link to="/login" className="login-btn" onClick={onClickFunction}>
-        Conecte-se
-      </Link>
-    </StyledNavBar>
-  );
+  const { user } = useAuth();
+
+  const handleNavLinks = () => {
+    if (!user) {
+      return (
+        <DynamicHeaderWithUnauthenticatedUser
+          onClickFunction={onClickFunction}
+        />
+      );
+    }
+    if (user && user.isPremium) {
+      return (
+        <DynamicHeaderWithAuthenticatedUser onClickFunction={onClickFunction} />
+      );
+    }
+    if (user) {
+      return (
+        <DynamicHeaderWithAuthenticatedUser onClickFunction={onClickFunction} />
+      );
+    }
+  };
+
+  return <StyledNavBar>{handleNavLinks()}</StyledNavBar>;
 };

@@ -1,9 +1,9 @@
+import { BeAPartner } from "../../Components/BeAPartner";
 import { HighLightedCarousel } from "../../Components/HighlightedCarousel";
 import { NewsletterSubscribe } from "../../Components/NewsLetterSubscribe";
 import { Subscribe } from "../../Components/Subscribe";
-import { StyledHomePage } from "./style";
-import { BeAPartner } from "../../Components/BeAPartner";
 import { TestimoniesList } from "../../Components/TestimoniesCarousel";
+import { StyledHomePage } from "./style";
 
 export const HomePage = () => {
   return (

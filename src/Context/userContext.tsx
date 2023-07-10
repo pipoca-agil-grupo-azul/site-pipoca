@@ -24,31 +24,30 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const navigate = useNavigate();
 
   const handleSubmitLogin = async (formData: ILoginFormData) => {
-    const toastLogin = toast.loading("Adicionando o milho!");
-    console.log(formData);
+    // toast.loading("Adicionando o milho...", {
+    //   isLoading: true,
+    //   autoClose: 1000,
+    //   closeOnClick: true,
+    // });
+    console.log(`Form data - ${formData}`);
     try {
       const response = await baseURL.post("/login", formData);
       localStorage.setItem("@USERTOKEN", response.data.accessToken);
-      localStorage.setItem("@USERID", response.data.user.id);
-      console.log(response.data);
       setUser(response.data);
-      toast.update(toastLogin, {
-        render: `Bem vindo ${response.data.user.name}`,
-        type: "success",
-        isLoading: false,
-        autoClose: 2000,
-        closeOnClick: true,
-      });
-      console.log(user);
+      // toast.success(`Seja bem-vindo ${response.data.user.name}`, {
+      //   type: "success",
+      //   isLoading: false,
+      //   autoClose: 2000,
+      //   closeOnClick: true,
+      // });
       navigate(`/`);
     } catch (error) {
-      toast.update(toastLogin, {
-        render: `Erro ao efetuar o login reveja suas informações`,
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true,
-      });
+      // toast.error("Erro ao efetuar o login! Reveja suas credenciais", {
+      //   type: "error",
+      //   isLoading: false,
+      //   autoClose: 3000,
+      //   closeOnClick: true,
+      // });
     }
   };
 
