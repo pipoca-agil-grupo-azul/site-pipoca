@@ -31,7 +31,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       const storageToken = localStorage.getItem("@USERTOKEN");
 
       if (storageToken && storageUser) {
-        console.log(`storage user - ${JSON.stringify(storageUser)}`);
         setUser(
           JSON.stringify(storageUser) as unknown as SetStateAction<IUser>
         );

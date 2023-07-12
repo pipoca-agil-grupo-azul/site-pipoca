@@ -7,10 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { updateUserFormSchema } from "./schema";
 
 export default function UpdateUser() {
-  const {
-    handleUpdateUser,
-    user: { email },
-  } = useAuth();
+  const { handleUpdateUser } = useAuth();
 
   const {
     handleSubmit,
