@@ -3,7 +3,7 @@ export interface IChildrenProps {
 }
 
 export interface IUser {
-  id: number | null | undefined;
+  id: string;
   email: string;
   name: string;
   dateBirth: string;
@@ -21,4 +21,9 @@ export interface IRegisterFormData {
   email: string;
   dateBirth: string;
   confirmPassword: string;
+}
+
+export interface IUpdateUserFormData {
+  name: string;
+  email: string;
 }

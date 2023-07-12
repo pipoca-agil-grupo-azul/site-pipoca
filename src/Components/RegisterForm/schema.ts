@@ -7,11 +7,11 @@ export const schemaRegisterForm = yup
     email: yup
       .string()
       .required("Email obrigatório!")
-      .email("Preencha com um e-mail válido"),
-    password: yup.string().required("Preencha o campo"),
+      .email("Preencha com um e-mail válido."),
+    password: yup.string().required("A senha precisa ser válida."),
     confirmPassword: yup
-            .string()
-            .oneOf([yup.ref("password")], "Falha na confirmação da senha!")
-            .required("Confirme a senha!"),
+      .string()
+      .oneOf([yup.ref("password")], "Falha na confirmação da senha!")
+      .required("Confirme a senha!"),
   })
   .required();
