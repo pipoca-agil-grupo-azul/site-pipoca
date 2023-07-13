@@ -19,35 +19,22 @@ interface IUserContext {
 export const UserContext = createContext({} as IUserContext);
 
 export const UserProvider = ({ children }: IChildrenProps) => {
-  const [user, setUser] = useState<IUser>();
+  const [user, setUser] = useState<IUser>(null);
 
   const navigate = useNavigate();
 
   const handleSubmitLogin = async (formData: ILoginFormData) => {
-    // toast.loading("Adicionando o milho...", {
-    //   isLoading: true,
-    //   autoClose: 1000,
-    //   closeOnClick: true,
-    // });
-    console.log(`Form data - ${formData}`);
     try {
       const response = await baseURL.post("/login", formData);
-      localStorage.setItem("@USERTOKEN", response.data.accessToken);
+      localStorage.setItem("@USERTOKEN", response.data.token);
+      localStorage.setItem(
+        "@AUTH:USER",
+        `${response.data.id} - ${response.data.email}`
+      );
       setUser(response.data);
-      // toast.success(`Seja bem-vindo ${response.data.user.name}`, {
-      //   type: "success",
-      //   isLoading: false,
-      //   autoClose: 2000,
-      //   closeOnClick: true,
-      // });
       navigate(`/`);
     } catch (error) {
-      // toast.error("Erro ao efetuar o login! Reveja suas credenciais", {
-      //   type: "error",
-      //   isLoading: false,
-      //   autoClose: 3000,
-      //   closeOnClick: true,
-      // });
+      //
     }
   };
 
@@ -77,8 +64,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("@USERTOKEN");
-    localStorage.removeItem("@USERID");
+    localStorage.clear();
     setUser(null);
     navigate("/");
   };
