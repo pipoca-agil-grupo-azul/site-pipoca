@@ -22,3 +22,9 @@ export interface IRegisterFormData {
   dateBirth: string;
   confirmPassword: string;
 }
+
+export interface IUpdateUserFormData {
+  name: string;
+  email: string;
+  password: string;
+}

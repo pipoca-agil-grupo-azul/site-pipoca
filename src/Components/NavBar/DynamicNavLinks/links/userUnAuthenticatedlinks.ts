@@ -1,27 +1,27 @@
 export const userUnAuthenticatedLinks = [
   {
     id: 1,
-    title: "Home",
+    content: "Home",
     url: "/",
   },
   {
     id: 2,
-    title: "Sobre",
+    content: "Sobre",
     url: "/about",
   },
   {
     id: 3,
-    title: "Blog",
+    content: "Blog",
     url: "/blog",
   },
   {
     id: 4,
-    title: "Projetos",
+    content: "Projetos",
     url: "/projects",
   },
   {
     id: 5,
-    title: "Contato",
+    content: "Contato",
     url: "/contato",
   },
 ];

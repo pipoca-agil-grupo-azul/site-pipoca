@@ -9,7 +9,7 @@ export default function DynamicHeaderWithUnauthenticatedUser() {
       {userUnAuthenticatedLinks.map((link) => {
         return (
           <Link key={link.id} to={`${link.url}`}>
-            {link.title}
+            {link.content}
           </Link>
         );
       })}

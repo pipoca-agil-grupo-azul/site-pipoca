@@ -6,6 +6,7 @@ import {
   IChildrenProps,
   ILoginFormData,
   IRegisterFormData,
+  IUpdateUserFormData,
   IUser,
 } from "./@types";
 
@@ -13,6 +14,7 @@ interface IUserContext {
   user?: IUser;
   handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
   handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
+  handleUpdateUser: (formData: IUpdateUserFormData) => Promise<void>;
   handleLogout: () => void;
 }
 
@@ -63,6 +65,10 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     }
   };
 
+  const handleUpdateUser = async (formData: IUpdateUserFormData) => {
+    console.log(formData);
+  };
+
   const handleLogout = () => {
     localStorage.clear();
     setUser(null);
@@ -75,6 +81,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         user,
         handleSubmitLogin,
         handleSubmitRegister,
+        handleUpdateUser,
         handleLogout,
       }}
     >

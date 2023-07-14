@@ -1,5 +1,5 @@
 import useAuth from "../../Context/hooks/useAuth";
-import DynamicHeaderWithAuthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithAuthenticatedAndNotPremiumUser";
+import DynamicHeaderWithAuthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithAuthenticated";
 import DynamicHeaderWithUnauthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithUnauthenticatedUser";
 import { StyledNavBar } from "./style";
 
