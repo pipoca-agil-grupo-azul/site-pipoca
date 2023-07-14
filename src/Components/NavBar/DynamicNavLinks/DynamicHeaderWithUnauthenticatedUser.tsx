@@ -1,26 +1,23 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { userUnAuthenticatedLinks } from "./links/userUnAuthenticatedlinks";
 
-export default function DynamicHeaderWithUnauthenticatedUser({
-  onClickFunction,
-}) {
+export default function DynamicHeaderWithUnauthenticatedUser() {
+  const navigate = useNavigate();
+
   return (
     <>
-      <Link to="/" onClick={onClickFunction}>
-        Home
-      </Link>
-      <Link to="/about" onClick={onClickFunction}>
-        Sobre
-      </Link>
-      <Link to="/blog" onClick={onClickFunction}>
-        Blog
-      </Link>
-      <Link to="/projects" onClick={onClickFunction}>
-        Projetos
-      </Link>
-      <Link to="/contato" onClick={onClickFunction}>
-        Contato
-      </Link>
-      <Link to="/login" className="login-btn" onClick={onClickFunction}>
+      {userUnAuthenticatedLinks.map((link) => {
+        return (
+          <Link key={link.id} to={`${link.url}`}>
+            {link.content}
+          </Link>
+        );
+      })}
+      <Link
+        to="/login"
+        className="login-btn"
+        onClick={() => navigate("/login")}
+      >
         Conecte-se
       </Link>
     </>

@@ -1,28 +1,20 @@
 import useAuth from "../../Context/hooks/useAuth";
-import DynamicHeaderWithAuthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithAuthenticatedAndNotPremiumUser";
+import DynamicHeaderWithAuthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithAuthenticated";
 import DynamicHeaderWithUnauthenticatedUser from "./DynamicNavLinks/DynamicHeaderWithUnauthenticatedUser";
 import { StyledNavBar } from "./style";
 
-export const NavBar = ({ onClickFunction }) => {
+export const NavBar = () => {
   const { user } = useAuth();
 
   const handleNavLinks = () => {
     if (!user) {
-      return (
-        <DynamicHeaderWithUnauthenticatedUser
-          onClickFunction={onClickFunction}
-        />
-      );
+      return <DynamicHeaderWithUnauthenticatedUser />;
     }
     if (user && user.isPremium) {
-      return (
-        <DynamicHeaderWithAuthenticatedUser onClickFunction={onClickFunction} />
-      );
+      return <DynamicHeaderWithAuthenticatedUser />;
     }
     if (user) {
-      return (
-        <DynamicHeaderWithAuthenticatedUser onClickFunction={onClickFunction} />
-      );
+      return <DynamicHeaderWithAuthenticatedUser />;
     }
   };
 
