@@ -12,13 +12,6 @@ export default function DynamicHeaderWithAuthenticatedUser() {
     <>
       {userAuthenticatedLinks.map((link) => {
         return <MenuItems items={link} />;
-        // <Link
-        //   key={link.id}
-        //   to={`${link.url}`}
-        //   onClick={link.content === "Sair" ? handleLogout : null}
-        // >
-        //   {link.content}
-        // </Link>
       })}
       {/* <Avatar
         alt="Ícone de avatar"
