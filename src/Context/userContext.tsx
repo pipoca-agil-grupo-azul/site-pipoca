@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { baseURL } from "../Services/api";
@@ -24,6 +24,21 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const [user, setUser] = useState<IUser>(null);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const loadingFromStorage = () => {
+      const storageUser = localStorage.getItem("@AUTH:USER");
+      const storageToken = localStorage.getItem("@USERTOKEN");
+
+      if (storageToken && storageUser) {
+        setUser(
+          JSON.stringify(storageUser) as unknown as SetStateAction<IUser>
+        );
+        navigate("/");
+      }
+    };
+    loadingFromStorage();
+  }, []);
 
   const handleSubmitLogin = async (formData: ILoginFormData) => {
     try {
