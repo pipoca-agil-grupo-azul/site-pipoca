@@ -8,7 +8,14 @@ export const schemaRegisterForm = yup
       .string()
       .required("Email obrigatório!")
       .email("Preencha com um e-mail válido"),
-    password: yup.string().required("Preencha o campo"),
+      password: yup
+      .string()
+      .matches(/(\d)/, "Deve conter pelo menos 1 número!")
+      .matches(/[a-z]/, "Deve conter pelo menos 1 letra minuscula!")
+      .matches(/[A-Z]/, "Deve conter pelo menos 1 letra maiúscula!")
+      .matches(/(\W|_)/, "Deve conter pelo menos 1 carácter especial!")
+      .matches(/.{8,}/, "Deve conter pelo menos 8 caracteres!")
+      .required("Digite a senha!"),
     confirmPassword: yup
             .string()
             .oneOf([yup.ref("password")], "Falha na confirmação da senha!")
