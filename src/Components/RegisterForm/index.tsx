@@ -6,6 +6,9 @@ import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
 import { schemaRegisterForm } from "./schema";
 import { StyledRegisterForm } from "./style";
+import { useState } from "react";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+
 
 export const RegisterForm = () => {
   const { handleSubmitRegister } = useAuth();
@@ -20,6 +23,33 @@ export const RegisterForm = () => {
     console.log(formData);
     handleSubmitRegister(formData);
   };
+
+  const [iconPassword, setIconPassword] = useState(false)
+  const [passwordInputType, setPasswordInputType] = useState('password')
+  
+  const handleTogglePasswordType = () =>{
+    if(passwordInputType == 'password'){
+      setPasswordInputType('text')
+      setIconPassword(true)
+    }
+    else{
+      setPasswordInputType('password')
+      setIconPassword(false)
+    }
+  }
+  const [iconConfirmPassword, setIconConfirmPassword] = useState(false)
+
+  const [confirmPasswordInputType, setConfirmPasswordInputType] = useState('password')
+  const handleToggleConfirmPasswordType = () =>{
+    if(confirmPasswordInputType == 'password'){
+      setConfirmPasswordInputType('text')
+      setIconConfirmPassword(true)
+    }
+    else{
+      setConfirmPasswordInputType('password')
+      setIconConfirmPassword(false)
+    }
+  }
 
   return (
     <StyledRegisterForm>
@@ -59,24 +89,30 @@ export const RegisterForm = () => {
         <label htmlFor="password">
           Senha (8 ou mais caracteres) <span> {errors.password?.message} </span>
         </label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Digite sua senha"
-          {...register("password")}
-        />
+        <div className="input-password">
+          <input
+            id="password"
+            name="password"
+            type={passwordInputType}
+            placeholder="Digite sua senha"
+            {...register("password")}
+          />
+            <button onClick={handleTogglePasswordType} type="button">{iconPassword ? <FiEye/> : <FiEyeOff/>}</button>
+        </div>
 
         <label htmlFor="confirmPassword">
           Confirmar senha <span> {errors.confirmPassword?.message} </span>{" "}
         </label>
-        <input
-          id="confirmPassword"
-          name="password"
-          type="password"
-          placeholder="Confirme sua senha"
-          {...register("confirmPassword")}
-        />
+        <div className="input-password">
+          <input
+            id="confirmPassword"
+            name="password"
+            type={confirmPasswordInputType}
+            placeholder="Confirme sua senha"
+            {...register("confirmPassword")}
+          />
+            <button onClick={handleToggleConfirmPasswordType} type="button"> {iconConfirmPassword ? <FiEye/> : <FiEyeOff/>} </button>
+        </div>
 
         <ButtonSubmit text={"Cadastre-se"} />
       </form>
