@@ -10,6 +10,7 @@ export const NavBar = () => {
     if (!user) {
       return <DynamicHeaderWithUnauthenticatedUser />;
     }
+    /* NO MOMENTO NÃO EXISTEM USERS PREMIUM. REFERENCIAR AQUI O HEADER DOS MESMOS SE VIEREM A EXISTIR*/
     if (user && user.isPremium) {
       return <DynamicHeaderWithAuthenticatedUser />;
     }

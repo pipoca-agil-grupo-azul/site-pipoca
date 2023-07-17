@@ -34,7 +34,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         setUser(
           JSON.stringify(storageUser) as unknown as SetStateAction<IUser>
         );
-        navigate("/");
       }
     };
     loadingFromStorage();

@@ -46,7 +46,25 @@ export const StyledNavBar = styled.nav`
     background-color: #ffcc33;
     transform: scale(1.1);
   }
+  .btn-logout{
+    border: none;
+    background-color: transparent;
+    transition: 400ms;
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-logout:hover{
+    transform: scale(1.6);
+  }
+  .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @media (max-width: 1023px) {
     .login-btn {
       font-size: var(--font-size-big);
