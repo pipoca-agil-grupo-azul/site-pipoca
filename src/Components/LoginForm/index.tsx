@@ -42,7 +42,7 @@ export const LoginForm = () => {
         <input
           id="password"
           name="password"
-          type="password"
+          //type="password"
           placeholder="Digite sua senha"
           {...register("password")}
         />

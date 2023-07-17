@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -9,6 +10,7 @@ import {
   IUpdateUserFormData,
   IUser,
 } from "./@types";
+import { useQuery } from "@tanstack/react-query";
 
 interface IUserContext {
   user?: IUser;
