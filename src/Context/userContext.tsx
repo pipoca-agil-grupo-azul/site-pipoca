@@ -1,8 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { baseURL } from "../Services/api";
+import {
+  notifyFailed,
+  notifyLoading,
+  notifySuccess,
+} from "../notifications/notifications";
 import {
   IChildrenProps,
   ILoginFormData,
@@ -10,7 +14,6 @@ import {
   IUpdateUserFormData,
   IUser,
 } from "./@types";
-import { useQuery } from "@tanstack/react-query";
 
 interface IUserContext {
   user?: IUser;
@@ -44,6 +47,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const handleSubmitLogin = async (formData: ILoginFormData) => {
     try {
       const response = await baseURL.post("/login", formData);
+      notifySuccess("Login realizado com sucesso!");
       localStorage.setItem("@USERTOKEN", response.data.token);
       localStorage.setItem(
         "@AUTH:USER",
@@ -52,41 +56,27 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       setUser(response.data);
       navigate(`/`);
     } catch (error) {
-      //
+      notifyFailed(
+        "Ocorreu um erro ao validar suas credenciais! Tente novamente."
+      );
     }
   };
 
   const handleSubmitRegister = async (formData: IRegisterFormData) => {
-    const toastRegister = toast.loading("Efetuando cadastro");
+    notifyLoading("Registrando cadastro no servidor...");
     console.log(formData);
     try {
-      const response = await baseURL.post("/user", formData);
-      console.log(response);
-      toast.update(toastRegister, {
-        render: "Cadastro realizado com sucesso",
-        type: "success",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true,
-      });
+      await baseURL.post("/user", formData);
+      notifySuccess("Cadastro realizado com sucesso!");
       navigate(`/login`);
     } catch (error) {
-      toast.update(toastRegister, {
-        render: "Erro ao efetuar o cadastro reveja suas informações",
-        type: "error",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true,
-      });
+      notifyFailed("Ocorreu um erro ao realizar o cadastro! Tente novamente.");
     }
-  };
-
-  const handleUpdateUser = async (formData: IUpdateUserFormData) => {
-    console.log(formData);
   };
 
   const handleLogout = () => {
     localStorage.clear();
+    notifySuccess("Logout realizado com sucesso!");
     setUser(null);
     navigate("/");
   };
