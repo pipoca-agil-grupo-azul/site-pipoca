@@ -24,7 +24,6 @@ export const StyledRegisterForm = styled.div`
   p {
     color: var(--color-secondary);
   }
-
   input {
     border: 1px solid black;
     padding: 20px;
@@ -42,6 +41,19 @@ export const StyledRegisterForm = styled.div`
     flex-grow: 0.5;
     height: 0.1px;
     background-color: #cdcfd2;
+  }
+
+  .input-password{
+    display: flex;
+    position: relative;
+  }
+
+  .input-password button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 10px;
+    top: 33%;
   }
 
   @media (max-width: 1023px) {
