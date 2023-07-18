@@ -11,17 +11,9 @@ import {
   IChildrenProps,
   ILoginFormData,
   IRegisterFormData,
-  IUpdateUserFormData,
   IUser,
 } from "./@types";
-
-interface IUserContext {
-  user?: IUser;
-  handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
-  handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
-  handleUpdateUser: (formData: IUpdateUserFormData) => Promise<void>;
-  handleLogout: () => void;
-}
+import { IUserContext } from "./interfaces/IUserContext";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -87,7 +79,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         user,
         handleSubmitLogin,
         handleSubmitRegister,
-        handleUpdateUser,
         handleLogout,
       }}
     >
