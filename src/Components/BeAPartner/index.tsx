@@ -12,9 +12,8 @@ export const BeAPartner = () => {
         <div className="text-be-a-partner">
           <h2> Seja um parceiro </h2>
           <p>
-            {" "}
             Fusce venenatis tellus a felis scelerisque. venenatis tellus a felis
-            scelerisque.{" "}
+            scelerisque.
           </p>
         </div>
         <a href="" className="partner-btn">
