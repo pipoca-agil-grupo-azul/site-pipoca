@@ -1,19 +1,19 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { baseURL } from "../Services/api";
+import { baseURL } from "../../Services/api";
 import {
   notifyFailed,
   notifyLoading,
   notifySuccess,
-} from "../notifications/notifications";
+} from "../../notifications/notifications";
 import {
   IChildrenProps,
   ILoginFormData,
   IRegisterFormData,
   IUser,
-} from "./@types";
-import { IUserContext } from "./interfaces/IUserContext";
+} from "../types/@types";
+import { IUserContext } from "../interfaces/IUserContext";
 
 export const UserContext = createContext({} as IUserContext);
 

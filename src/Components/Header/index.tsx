@@ -1,6 +1,6 @@
-import { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import useHeader from "../../Context/hooks/useHeader";
 import "../../Styles/index.css";
 import logoImg from "../../assets/pipoca-logo.svg";
 import { NavBar } from "../NavBar";
@@ -11,18 +11,11 @@ interface HeaderProps {
 }
 
 export const Header = ({ style }: HeaderProps) => {
+  const { menuVisibility, navBarVisibility } = useHeader();
   const navigate = useNavigate();
-
-  const [navBarVisibility, setNavBarVisibility] = useState("hidden");
 
   const goToHome = () => {
     navigate("/");
-  };
-
-  const menuVisibility = () => {
-    navBarVisibility == "hidden"
-      ? setNavBarVisibility("visible")
-      : setNavBarVisibility("hidden");
   };
 
   return (

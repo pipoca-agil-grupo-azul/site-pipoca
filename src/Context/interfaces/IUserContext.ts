@@ -1,4 +1,4 @@
-import { ILoginFormData, IRegisterFormData, IUser } from "../@types";
+import { ILoginFormData, IRegisterFormData, IUser } from "../types/@types";
 
 export interface IUserContext {
   user?: IUser;
