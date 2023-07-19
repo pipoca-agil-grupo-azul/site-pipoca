@@ -3,8 +3,8 @@ import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaLoginForm } from "./schema";
-import { ILoginFormData } from "../../Context/@types";
-import { UserContext } from "../../../src/Context/userContext";
+import { ILoginFormData } from "../../Context/types/@types";
+import { UserContext } from "../../Context/UserContext/userContext";
 import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
 

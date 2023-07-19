@@ -10,9 +10,9 @@ import { useQuery } from "@tanstack/react-query";
 import { baseURL } from "../../Services/api";
 
 export const TestimoniesList = () => {
-  const { data, isLoading, isError } = useQuery({queryKey: ["testimoniesCarousel"], queryFn: async () => {
-    return await baseURL.get("");
-  }});
+  // const { data, isLoading, isError } = useQuery({queryKey: ["testimoniesCarousel"], queryFn: async () => {
+  //   return await baseURL.get("");
+  // }});
 
   return (
     <StyledTestimoniesList>

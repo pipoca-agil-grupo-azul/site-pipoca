@@ -12,6 +12,7 @@ export const HighLightedCarousel = () => {
     queryFn: async () => {
       return await baseURL.get("/apiyt").then((response) => response.data);
     },
+    retry: false,
   });
 
   if (isError) {
