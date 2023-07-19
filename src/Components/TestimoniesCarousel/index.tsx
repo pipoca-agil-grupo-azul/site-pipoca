@@ -5,15 +5,9 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonyCard } from "../TestimonyCard";
 import { StyledTestimoniesList } from "./style";
-import { fakeVideos } from "./fakeVideos";
-import { useQuery } from "@tanstack/react-query";
-import { baseURL } from "../../Services/api";
+import { testimoniesVideos } from "./testimoniesVideos";
 
 export const TestimoniesList = () => {
-  // const { data, isLoading, isError } = useQuery({queryKey: ["testimoniesCarousel"], queryFn: async () => {
-  //   return await baseURL.get("");
-  // }});
-
   return (
     <StyledTestimoniesList>
       <div className="title__section-testimonies">
@@ -46,9 +40,14 @@ export const TestimoniesList = () => {
           disableOnInteraction: false,
         }}
       >
-        {fakeVideos.map((video) => (
+        {testimoniesVideos.map((video) => (
           <SwiperSlide>
-            <TestimonyCard key={video.id} videoContent={video} />
+            <TestimonyCard
+              key={video.id}
+              videoUrl={video.youtubeId}
+              title={video.title}
+              description={video.description}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
