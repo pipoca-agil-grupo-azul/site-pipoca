@@ -1,12 +1,7 @@
+import { VideoType } from "../../Interfaces/videosInterfaces";
 import { StyledContainerHighlightedEpisode } from "./style";
 
-interface Props {
-  title: string;
-  description: string;
-  videoUrl: string;
-}
-
-export const HighlightedEpisodeCard = ({ title, videoUrl }: Props) => {
+export const HighlightedEpisodeCard = ({ title, videoUrl }: VideoType) => {
   const youtubeId = videoUrl.split("=")[1];
 
   return (
