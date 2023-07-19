@@ -6,8 +6,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { TestimonyCard } from "../TestimonyCard";
 import { StyledTestimoniesList } from "./style";
 import { fakeVideos } from "./fakeVideos";
+import { useQuery } from "@tanstack/react-query";
+import { baseURL } from "../../Services/api";
 
 export const TestimoniesList = () => {
+  const { data, isLoading, isError } = useQuery({queryKey: ["testimoniesCarousel"], queryFn: async () => {
+    return await baseURL.get("");
+  }});
+
   return (
     <StyledTestimoniesList>
       <div className="title__section-testimonies">
