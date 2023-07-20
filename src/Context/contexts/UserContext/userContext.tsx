@@ -80,10 +80,17 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     try {
       const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
       console.log(details.email);
-      setUser(JSON.parse(details.email));
-      console.log(`user -> ${user.email}`);
+      setUser(JSON.stringify(details) as unknown as SetStateAction<IUser>);
+      localStorage.setItem(
+        "@AUTH_USER_GOOGLE_CREDENTIALS",
+        `${details.name} - ${details.email}`
+      );
+      notifySuccess("Login realizado com sucesso!");
+      navigate("/");
     } catch (error) {
-      //
+      notifyFailed(
+        "Ocorreu um erro ao entrar com o Google. Tente novamente mais tarde."
+      );
     }
   };
 
