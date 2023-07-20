@@ -56,7 +56,6 @@ export const UserProvider = ({ children }: IChildrenProps) => {
 
   const handleSubmitRegister = async (formData: IRegisterFormData) => {
     notifyLoading("Registrando cadastro no servidor...");
-    console.log(formData);
     try {
       await baseURL.post("/user", formData);
       notifySuccess("Cadastro realizado com sucesso!");
