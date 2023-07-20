@@ -1,19 +1,22 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import jwtDecode from "jwt-decode";
 import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { baseURL } from "../../Services/api";
+import { baseURL } from "../../../Services/api";
 import {
   notifyFailed,
   notifyLoading,
   notifySuccess,
-} from "../../notifications/notifications";
+} from "../../../notifications/notifications";
+import { IUserContext } from "../../interfaces/IUserContext";
+import { ResponseGoogleLogin } from "../../interfaces/ResponseGoogleLogin";
 import {
   IChildrenProps,
   ILoginFormData,
   IRegisterFormData,
   IUser,
-} from "../types/@types";
-import { IUserContext } from "../interfaces/IUserContext";
+} from "../../types/@types";
+import { InfoGoogleLoginDetails } from "../../interfaces/LoginGoogleTokenDetails";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -26,11 +29,19 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     const loadingFromStorage = () => {
       const storageUser = localStorage.getItem("@AUTH:USER");
       const storageToken = localStorage.getItem("@USERTOKEN");
+      const authUserGoogle = localStorage.getItem(
+        "@AUTH_USER_GOOGLE_CREDENTIALS"
+      );
 
       if (storageToken && storageUser) {
         setUser(
           JSON.stringify(storageUser) as unknown as SetStateAction<IUser>
         );
+      }
+
+      if (authUserGoogle) {
+        const details = jwtDecode(authUserGoogle);
+        setUser(details as unknown as SetStateAction<IUser>);
       }
     };
     loadingFromStorage();
@@ -65,6 +76,17 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     }
   };
 
+  const handleLoginWithGoogle = async (response: ResponseGoogleLogin) => {
+    try {
+      const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
+      console.log(details.email);
+      setUser(JSON.parse(details.email));
+      console.log(`user -> ${user.email}`);
+    } catch (error) {
+      //
+    }
+  };
+
   const handleLogout = () => {
     localStorage.clear();
     notifySuccess("Logout realizado com sucesso!");
@@ -78,6 +100,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         user,
         handleSubmitLogin,
         handleSubmitRegister,
+        handleLoginWithGoogle,
         handleLogout,
       }}
     >
