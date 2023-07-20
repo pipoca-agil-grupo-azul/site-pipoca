@@ -21,7 +21,7 @@ export const notifyFailed = (message: string) => {
 export const notifyLoading = (message: string) => {
   toast.loading(message, {
     position: toast.POSITION.TOP_RIGHT,
-    autoClose: 2000,
+    autoClose: 1000,
     closeOnClick: true,
     pauseOnHover: true,
   });

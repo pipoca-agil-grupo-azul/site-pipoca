@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaLoginForm } from "./schema";
 import { ILoginFormData } from "../../Context/types/@types";
-import { UserContext } from "../../Context/UserContext/userContext";
+import { UserContext } from "../../Context/contexts/UserContext/userContext";
 import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
 import { FiEye, FiEyeOff } from "react-icons/fi";
@@ -22,19 +22,18 @@ export const LoginForm = () => {
     handleSubmitLogin(formData);
   };
 
-  const [iconPassword, setIconPassword] = useState(false)
-  const [passwordInputType, setPasswordInputType] = useState('password')
-  
-  const handleTogglePasswordType = () =>{
-    if(passwordInputType == 'password'){
-      setPasswordInputType('text')
-      setIconPassword(true)
+  const [iconPassword, setIconPassword] = useState(false);
+  const [passwordInputType, setPasswordInputType] = useState("password");
+
+  const handleTogglePasswordType = () => {
+    if (passwordInputType == "password") {
+      setPasswordInputType("text");
+      setIconPassword(true);
+    } else {
+      setPasswordInputType("password");
+      setIconPassword(false);
     }
-    else{
-      setPasswordInputType('password')
-      setIconPassword(false)
-    }
-  }
+  };
 
   return (
     <StyledLoginForm>
@@ -62,7 +61,9 @@ export const LoginForm = () => {
             placeholder="Digite sua senha"
             {...register("password")}
           />
-          <button onClick={handleTogglePasswordType} type="button">{iconPassword ? <FiEye/> : <FiEyeOff/>}</button>
+          <button onClick={handleTogglePasswordType} type="button">
+            {iconPassword ? <FiEye /> : <FiEyeOff />}
+          </button>
         </div>
 
         <ButtonSubmit text={"Entre"} />

@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
-import { IHeaderContext } from "../interfaces/HeaderContext";
-import { IChildrenProps } from "../types/@types";
+import { IHeaderContext } from "../../interfaces/HeaderContext";
+import { IChildrenProps } from "../../types/@types";
 
 export const HeaderContext = createContext({} as IHeaderContext);
 
