@@ -16,6 +16,7 @@ import {
   IRegisterFormData,
   IUser,
 } from "../../types/@types";
+import { InfoGoogleLoginDetails } from "../../interfaces/LoginGoogleTokenDetails";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -76,24 +77,11 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   };
 
   const handleLoginWithGoogle = async (response: ResponseGoogleLogin) => {
-    // try {
-    //   setUser(jwtDecode(response.credential));
-    //   localStorage.setItem(
-    //     "@AUTH_USER_GOOGLE_CREDENTIALS",
-    //     `${JSON.stringify(response.credential)}`
-    //   );
-    //   console.log(`user ${user}`);
-    //   navigate("/");
-    // } catch (error) {
-    //   notifyFailed(
-    //     "Um erro inesperado ocorreu ao logar com o Google. Tente novamente mais tarde."
-    //   );
-    // }
     try {
-      const details = jwtDecode(response.credential);
+      const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
       console.log(details.email);
-      setUser(details.email);
-      console.log(`user -> ${user}`);
+      setUser(JSON.parse(details.email));
+      console.log(`user -> ${user.email}`);
     } catch (error) {
       //
     }
