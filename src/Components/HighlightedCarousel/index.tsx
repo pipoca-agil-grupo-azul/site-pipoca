@@ -31,7 +31,7 @@ export const HighLightedCarousel = () => {
         showArrows={false}
         showStatus={false}
         infiniteLoop={true}
-        autoPlay={false}
+        autoPlay={true}
         interval={2000}
         centerMode={true}
         centerSlidePercentage={100}
