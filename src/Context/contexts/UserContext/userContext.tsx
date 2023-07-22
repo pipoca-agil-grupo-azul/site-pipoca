@@ -40,7 +40,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       }
 
       if (authUserGoogle) {
-        const details = jwtDecode(authUserGoogle);
+        const details = authUserGoogle;
         setUser(details as unknown as SetStateAction<IUser>);
       }
     };
@@ -79,8 +79,9 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const handleLoginWithGoogle = async (response: ResponseGoogleLogin) => {
     try {
       const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
-      console.log(details.email);
-      setUser(JSON.stringify(details) as unknown as SetStateAction<IUser>);
+      const userDetails = {name:details.given_name,email:details.email, isPremium:'False', dateBirth:null}
+      setUser(userDetails as unknown as SetStateAction<IUser>);
+      
       localStorage.setItem(
         "@AUTH_USER_GOOGLE_CREDENTIALS",
         `${details.name} - ${details.email}`

@@ -6,7 +6,7 @@ export interface IUser {
   id: number | null | undefined;
   email: string;
   name: string;
-  dateBirth: string;
+  dateBirth?: string;
   isPremium: boolean;
 }
 
