@@ -5,7 +5,6 @@ import "../../Styles/index.css";
 import logoImg from "../../assets/pipoca-logo.svg";
 import { NavBar } from "../NavBar";
 import { StyledHeader } from "./style";
-import useAuth from "../../Context/hooks/useAuth";
 
 interface HeaderProps {
   style?: React.CSSProperties;
@@ -18,10 +17,6 @@ export const Header = ({ style }: HeaderProps) => {
   const goToHome = () => {
     navigate("/");
   };
-
-  const { user } = useAuth();
-
-  console.log(user)
   
   return (
     <StyledHeader style={style}>
