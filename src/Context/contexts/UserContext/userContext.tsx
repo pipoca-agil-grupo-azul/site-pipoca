@@ -40,7 +40,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       }
 
       if (authUserGoogle) {
-        const details = jwtDecode(authUserGoogle);
+        const details = authUserGoogle;
         setUser(details as unknown as SetStateAction<IUser>);
       }
     };
@@ -81,6 +81,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
       const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
       console.log(details.email);
       setUser(JSON.stringify(details) as unknown as SetStateAction<IUser>);
+      
       localStorage.setItem(
         "@AUTH_USER_GOOGLE_CREDENTIALS",
         `${details.name} - ${details.email}`
