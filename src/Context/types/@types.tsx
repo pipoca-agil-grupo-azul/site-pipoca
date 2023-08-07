@@ -28,3 +28,7 @@ export interface IUpdateUserFormData {
   email: string;
   password: string;
 }
+
+export default interface ChangePasswordData {
+  email: string;
+}

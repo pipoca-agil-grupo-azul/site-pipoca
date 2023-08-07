@@ -3,9 +3,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
+import GoogleProvider from "./Context/contexts/GoogleContext/GoogleContext";
 import HeaderProvider from "./Context/contexts/HeaderContext/HeaderContext";
 import { UserProvider } from "./Context/contexts/UserContext/userContext";
-import GoogleProvider from "./Context/contexts/GoogleContext/GoogleContext";
 
 const queryClient = new QueryClient();
 

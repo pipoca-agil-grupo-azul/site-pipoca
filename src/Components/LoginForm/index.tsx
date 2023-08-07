@@ -1,16 +1,16 @@
-import { StyledLoginForm } from "./style";
-import { useContext, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaLoginForm } from "./schema";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import useAuth from "../../Context/hooks/useAuth";
 import { ILoginFormData } from "../../Context/types/@types";
-import { UserContext } from "../../Context/contexts/UserContext/userContext";
 import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
-import { FiEye, FiEyeOff } from "react-icons/fi";
+import { schemaLoginForm } from "./schema";
+import { StyledLoginForm } from "./style";
 
 export const LoginForm = () => {
-  const { handleSubmitLogin } = useContext(UserContext);
+  const { handleSubmitLogin } = useAuth();
 
   const {
     register,
@@ -70,7 +70,7 @@ export const LoginForm = () => {
       </form>
       <div className="divider">
         <p className="line"></p>
-        <p className="text"> </p>
+        <p className="text"></p>
         <p className="line"></p>
       </div>
 

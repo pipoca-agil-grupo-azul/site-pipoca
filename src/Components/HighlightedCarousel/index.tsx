@@ -23,8 +23,6 @@ export const HighLightedCarousel = () => {
     return <div>Carregando...</div>;
   }
 
-  console.log(data);
-
   return (
     <StyledHighlightedList>
       <Carousel

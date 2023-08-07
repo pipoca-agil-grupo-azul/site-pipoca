@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import RecoverPassword from "../Components/recoverPassword";
 import AboutPage from "../Pages/AboutPage";
 import BlogPage from "../Pages/BlogPage";
 import { ContactPage } from "../Pages/ContactPage";
@@ -19,6 +20,7 @@ export const AppRoutes = () => {
       <Route path="projects" element={<ProjectsPage />} />
       <Route path="blog" element={<BlogPage />} />
       <Route path="/update" element={<UpdateUserPage />} />
+      <Route path="/recover" element={<RecoverPassword />} />
     </Routes>
   );
 };
