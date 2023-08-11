@@ -1,48 +1,45 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import ChangePasswordData from "../../Context/types/@types";
-import { ButtonSubmit } from "../ButtonSubmit";
-import { StyledLoginForm } from "../LoginForm/style";
-import { recoverPasswordSchema } from "./schema";
+import EmailChangePassword from "../../../Context/types/@types";
+import { ButtonSubmit } from "../../ButtonSubmit";
+import { StyledLoginForm } from "../../LoginForm/style";
+import { sendEmailSchema } from "./schema";
 import { ButtonRecoverPassword } from "./style";
-import { notifyFailed, notifySuccess } from "../../notifications/notifications";
-import { useNavigate } from "react-router-dom";
 
-export default function RecoverPassword() {
+export default function SendEmail() {
   const [email, setEmail] = useState("");
   const {
     formState: { errors },
-  } = useForm<ChangePasswordData>({
-    resolver: yupResolver(recoverPasswordSchema),
+  } = useForm<EmailChangePassword>({
+    resolver: yupResolver(sendEmailSchema),
   });
 
-  // ! --> Ainda precisa ser criado no back end o método que irá receber essa requisição!
+  const onSubmitForm = async (event) => {
+    event.preventDefault();
 
-  // const onSubmitForm = async (event) => {
-  //   event.preventDefault();
-  //   const userEmail = await fetch(
-  //     `ttps://servidor-pipoca-production.up.railway.app/user/${email}`
-  //   );
+    // const userEmail = await fetch(
+    //   `ttps://servidor-pipoca-production.up.railway.app/user/${email}`
+    // );
 
-  //   if (!userEmail) {
-  //     return (
-  //       <div>
-  //         {notifyFailed("Email não encontrado") as unknown as React.ReactNode}
-  //       </div>
-  //     );
-  //   }
+    // if (!userEmail) {
+    //   return (
+    //     <div>
+    //       {notifyFailed("Email não encontrado") as unknown as React.ReactNode}
+    //     </div>
+    //   );
+    // }
 
-  //   return (
-  //     <div>
-  //       {
-  //         notifySuccess(
-  //           "Ação realizada com sucesso."
-  //         ) as unknown as React.ReactNode
-  //       }
-  //     </div>
-  //   );
-  // };
+    // return (
+    //   <div>
+    //     {
+    //       notifySuccess(
+    //         "Ação realizada com sucesso."
+    //       ) as unknown as React.ReactNode
+    //     }
+    //   </div>
+    // );
+  };
 
   return (
     <StyledLoginForm>
@@ -51,7 +48,7 @@ export default function RecoverPassword() {
         Informe seu email e lhe enviaremos todas as instruções para a
         recuperação de senha.
       </p>
-      <form>
+      <form onSubmit={(event) => onSubmitForm(event)}>
         <label htmlFor="email">
           Email <span> {errors.email?.message} </span>
         </label>

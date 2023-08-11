@@ -29,6 +29,11 @@ export interface IUpdateUserFormData {
   password: string;
 }
 
-export default interface ChangePasswordData {
+export default interface EmailChangePassword {
   email: string;
+}
+
+export default interface ChangePasswordData {
+  newPassword: string;
+  confirmNewPassword: string;
 }

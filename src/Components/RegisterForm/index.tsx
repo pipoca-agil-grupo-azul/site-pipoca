@@ -9,7 +9,6 @@ import { StyledRegisterForm } from "./style";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 
-
 export const RegisterForm = () => {
   const { handleSubmitRegister } = useAuth();
 
@@ -24,37 +23,36 @@ export const RegisterForm = () => {
     handleSubmitRegister(formData);
   };
 
-  const [iconPassword, setIconPassword] = useState(false)
-  const [passwordInputType, setPasswordInputType] = useState('password')
-  
-  const handleTogglePasswordType = () =>{
-    if(passwordInputType == 'password'){
-      setPasswordInputType('text')
-      setIconPassword(true)
-    }
-    else{
-      setPasswordInputType('password')
-      setIconPassword(false)
-    }
-  }
-  const [iconConfirmPassword, setIconConfirmPassword] = useState(false)
+  const [iconPassword, setIconPassword] = useState(false);
+  const [passwordInputType, setPasswordInputType] = useState("password");
 
-  const [confirmPasswordInputType, setConfirmPasswordInputType] = useState('password')
-  const handleToggleConfirmPasswordType = () =>{
-    if(confirmPasswordInputType == 'password'){
-      setConfirmPasswordInputType('text')
-      setIconConfirmPassword(true)
+  const handleTogglePasswordType = () => {
+    if (passwordInputType == "password") {
+      setPasswordInputType("text");
+      setIconPassword(true);
+    } else {
+      setPasswordInputType("password");
+      setIconPassword(false);
     }
-    else{
-      setConfirmPasswordInputType('password')
-      setIconConfirmPassword(false)
+  };
+  const [iconConfirmPassword, setIconConfirmPassword] = useState(false);
+  const [confirmPasswordInputType, setConfirmPasswordInputType] =
+    useState("password");
+
+  const handleToggleConfirmPasswordType = () => {
+    if (confirmPasswordInputType == "password") {
+      setConfirmPasswordInputType("text");
+      setIconConfirmPassword(true);
+    } else {
+      setConfirmPasswordInputType("password");
+      setIconConfirmPassword(false);
     }
-  }
+  };
 
   return (
     <StyledRegisterForm>
       <h1> Cadastre-se </h1>
-      <form action="" onSubmit={handleSubmit(submitRegister)}>
+      <form onSubmit={handleSubmit(submitRegister)}>
         <label htmlFor="name">
           Nome completo <span> {errors.name?.message} </span>
         </label>
@@ -97,7 +95,9 @@ export const RegisterForm = () => {
             placeholder="Digite sua senha"
             {...register("password")}
           />
-            <button onClick={handleTogglePasswordType} type="button">{iconPassword ? <FiEye/> : <FiEyeOff/>}</button>
+          <button onClick={handleTogglePasswordType} type="button">
+            {iconPassword ? <FiEye /> : <FiEyeOff />}
+          </button>
         </div>
 
         <label htmlFor="confirmPassword">
@@ -111,7 +111,10 @@ export const RegisterForm = () => {
             placeholder="Confirme sua senha"
             {...register("confirmPassword")}
           />
-            <button onClick={handleToggleConfirmPasswordType} type="button"> {iconConfirmPassword ? <FiEye/> : <FiEyeOff/>} </button>
+          <button onClick={handleToggleConfirmPasswordType} type="button">
+            {" "}
+            {iconConfirmPassword ? <FiEye /> : <FiEyeOff />}{" "}
+          </button>
         </div>
 
         <ButtonSubmit text={"Cadastre-se"} />
