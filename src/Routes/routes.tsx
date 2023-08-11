@@ -7,6 +7,7 @@ import { HomePage } from "../Pages/HomePage";
 import { LoginPage } from "../Pages/LoginPage";
 import ProjectsPage from "../Pages/ProjectsPage";
 import { RegisterPage } from "../Pages/RegisterPage";
+import UpdateUserPage from "../Pages/UpdateUser";
 import SendEmail from "../Components/recoverPassword/sendEmail";
 
 export const AppRoutes = () => {
@@ -19,6 +20,7 @@ export const AppRoutes = () => {
       <Route path="about" element={<AboutPage />} />
       <Route path="projects" element={<ProjectsPage />} />
       <Route path="blog" element={<BlogPage />} />
+      <Route path="/update" element={<UpdateUserPage />} />
       <Route path="/recover" element={<SendEmail />} />
       <Route path="/recoverPassword" element={<RecoverPassword />} />
     </Routes>

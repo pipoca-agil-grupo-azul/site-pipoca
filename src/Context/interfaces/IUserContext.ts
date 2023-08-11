@@ -6,5 +6,6 @@ export interface IUserContext {
   handleSubmitLogin: (formData: ILoginFormData) => Promise<void>;
   handleSubmitRegister: (formData: IRegisterFormData) => Promise<void>;
   handleLoginWithGoogle: (response: CredentialResponse) => Promise<void>;
+  handleUpdateCredentials: () => Promise<void>;
   handleLogout: () => void;
 }

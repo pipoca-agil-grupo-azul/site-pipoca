@@ -1,4 +1,4 @@
-import ChangePasswordData from "../../../Context/types/@types";
+import IChangePasswordData from "../../../Context/types/@types";
 import { useForm } from "react-hook-form";
 import { ButtonSubmit } from "../../ButtonSubmit";
 import { StyledLoginForm } from "../../LoginForm/style";
@@ -13,7 +13,7 @@ export default function RecoverPassword() {
 
   const {
     formState: { errors },
-  } = useForm<ChangePasswordData>({
+  } = useForm<IChangePasswordData>({
     resolver: yupResolver(recoverPasswordSchema),
   });
 

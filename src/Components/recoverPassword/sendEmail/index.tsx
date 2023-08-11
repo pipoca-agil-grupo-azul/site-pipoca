@@ -1,7 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import EmailChangePassword from "../../../Context/types/@types";
+import IEmailChangePassword from "../../../Context/types/@types";
 import { ButtonSubmit } from "../../ButtonSubmit";
 import { StyledLoginForm } from "../../LoginForm/style";
 import { sendEmailSchema } from "./schema";
@@ -11,7 +11,7 @@ export default function SendEmail() {
   const [email, setEmail] = useState("");
   const {
     formState: { errors },
-  } = useForm<EmailChangePassword>({
+  } = useForm<IEmailChangePassword>({
     resolver: yupResolver(sendEmailSchema),
   });
 
@@ -61,7 +61,7 @@ export default function SendEmail() {
           value={email}
         />
 
-        <ButtonSubmit text={"Enviar"} />
+        <ButtonSubmit text={"Enviar"} path="/recoverPassword" />
       </form>
       <div className="divider">
         <p className="line"></p>

@@ -73,7 +73,6 @@ export const LoginForm = () => {
         <p className="text"></p>
         <p className="line"></p>
       </div>
-
       <LoginWithSocialMedia />
     </StyledLoginForm>
   );
