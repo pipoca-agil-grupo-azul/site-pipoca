@@ -1,19 +1,21 @@
-/* eslint-disable react-hooks/rules-of-hooks */
+import { CredentialResponse } from "@react-oauth/google";
+import jwtDecode from "jwt-decode";
 import { SetStateAction, createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { baseURL } from "../../Services/api";
+import { baseURL } from "../../../Services/api";
 import {
   notifyFailed,
   notifyLoading,
   notifySuccess,
-} from "../../notifications/notifications";
+} from "../../../notifications/notifications";
+import { IUserContext } from "../../interfaces/IUserContext";
+import { InfoGoogleLoginDetails } from "../../interfaces/LoginGoogleTokenDetails";
 import {
   IChildrenProps,
   ILoginFormData,
   IRegisterFormData,
   IUser,
-} from "../types/@types";
-import { IUserContext } from "../interfaces/IUserContext";
+} from "../../types/@types";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -26,11 +28,18 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     const loadingFromStorage = () => {
       const storageUser = localStorage.getItem("@AUTH:USER");
       const storageToken = localStorage.getItem("@USERTOKEN");
+      const authUserName = localStorage.getItem("@AUTH_USER_GOOGLE_NAME");
+      const authUserEmail = localStorage.getItem("@AUTH_USER_GOOGLE_EMAIL");
 
       if (storageToken && storageUser) {
         setUser(
           JSON.stringify(storageUser) as unknown as SetStateAction<IUser>
         );
+      }
+
+      if (authUserEmail && authUserName) {
+        const details = { authUserEmail, authUserName };
+        setUser(JSON.stringify(details) as unknown as SetStateAction<IUser>);
       }
     };
     loadingFromStorage();
@@ -65,6 +74,23 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     }
   };
 
+  const handleLoginWithGoogle = async (response: CredentialResponse) => {
+    try {
+      const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
+      setUser(
+        JSON.stringify(details.email) as unknown as SetStateAction<IUser>
+      );
+      localStorage.setItem("@AUTH_USER_GOOGLE_NAME", `${details.name}`);
+      localStorage.setItem("@AUTH_USER_GOOGLE_EMAIL", `${details.email}`);
+      notifySuccess("Login realizado com sucesso!");
+      navigate("/");
+    } catch (error) {
+      notifyFailed(
+        "Ocorreu um erro ao entrar com o Google. Tente novamente mais tarde."
+      );
+    }
+  };
+
   const handleLogout = () => {
     localStorage.clear();
     notifySuccess("Logout realizado com sucesso!");
@@ -78,6 +104,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         user,
         handleSubmitLogin,
         handleSubmitRegister,
+        handleLoginWithGoogle,
         handleLogout,
       }}
     >

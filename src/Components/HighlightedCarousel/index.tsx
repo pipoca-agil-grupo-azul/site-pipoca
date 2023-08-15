@@ -23,15 +23,13 @@ export const HighLightedCarousel = () => {
     return <div>Carregando...</div>;
   }
 
-  console.log(data);
-
   return (
     <StyledHighlightedList>
       <Carousel
         showArrows={false}
         showStatus={false}
         infiniteLoop={true}
-        autoPlay={false}
+        autoPlay={true}
         interval={2000}
         centerMode={true}
         centerSlidePercentage={100}

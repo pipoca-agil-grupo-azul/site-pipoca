@@ -1,15 +1,16 @@
-import { StyledLoginForm } from "./style";
-import { useContext } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { schemaLoginForm } from "./schema";
+import { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import useAuth from "../../Context/hooks/useAuth";
 import { ILoginFormData } from "../../Context/types/@types";
-import { UserContext } from "../../Context/UserContext/userContext";
 import { ButtonSubmit } from "../ButtonSubmit";
 import { LoginWithSocialMedia } from "../LoginWithSocialMedia";
+import { schemaLoginForm } from "./schema";
+import { StyledLoginForm } from "./style";
 
 export const LoginForm = () => {
-  const { handleSubmitLogin } = useContext(UserContext);
+  const { handleSubmitLogin } = useAuth();
 
   const {
     register,
@@ -19,6 +20,19 @@ export const LoginForm = () => {
 
   const submitLogin: SubmitHandler<ILoginFormData> = (formData) => {
     handleSubmitLogin(formData);
+  };
+
+  const [iconPassword, setIconPassword] = useState(false);
+  const [passwordInputType, setPasswordInputType] = useState("password");
+
+  const handleTogglePasswordType = () => {
+    if (passwordInputType == "password") {
+      setPasswordInputType("text");
+      setIconPassword(true);
+    } else {
+      setPasswordInputType("password");
+      setIconPassword(false);
+    }
   };
 
   return (
@@ -39,19 +53,24 @@ export const LoginForm = () => {
         <label htmlFor="password">
           Senha <span> {errors.password?.message} </span>
         </label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          placeholder="Digite sua senha"
-          {...register("password")}
-        />
+        <div className="input-password">
+          <input
+            id="password"
+            name="password"
+            type={passwordInputType}
+            placeholder="Digite sua senha"
+            {...register("password")}
+          />
+          <button onClick={handleTogglePasswordType} type="button">
+            {iconPassword ? <FiEye /> : <FiEyeOff />}
+          </button>
+        </div>
 
         <ButtonSubmit text={"Entre"} />
       </form>
       <div className="divider">
         <p className="line"></p>
-        <p className="text"> </p>
+        <p className="text"></p>
         <p className="line"></p>
       </div>
 
