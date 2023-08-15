@@ -32,7 +32,7 @@ export default function RecoverPassword() {
           Senha <span> {errors.newPassword?.message} </span>
         </label>
         <input
-          id="email"
+          id="newPassword"
           name="newPassword"
           type="password"
           placeholder="Digite sua nova senha"
@@ -44,7 +44,7 @@ export default function RecoverPassword() {
           Confirme sua senha <span> {errors.confirmNewPassword?.message} </span>
         </label>
         <input
-          id="email"
+          id="confirmNewPasswod"
           name="confirmNewPassword"
           type="password"
           placeholder="Confirme sua senha"

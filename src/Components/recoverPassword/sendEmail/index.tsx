@@ -6,6 +6,10 @@ import { ButtonSubmit } from "../../ButtonSubmit";
 import { StyledLoginForm } from "../../LoginForm/style";
 import { sendEmailSchema } from "./schema";
 import { ButtonRecoverPassword } from "./style";
+import {
+  notifyFailed,
+  notifySuccess,
+} from "../../../notifications/notifications";
 
 export default function SendEmail() {
   const [email, setEmail] = useState("");
@@ -18,27 +22,31 @@ export default function SendEmail() {
   const onSubmitForm = async (event) => {
     event.preventDefault();
 
-    // const userEmail = await fetch(
-    //   `ttps://servidor-pipoca-production.up.railway.app/user/${email}`
-    // );
+    const userEmail = await fetch("http://localhost:8080/user/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: email,
+    });
 
-    // if (!userEmail) {
-    //   return (
-    //     <div>
-    //       {notifyFailed("Email não encontrado") as unknown as React.ReactNode}
-    //     </div>
-    //   );
-    // }
+    if (!userEmail) {
+      return (
+        <div>
+          {notifyFailed("Email não encontrado") as unknown as React.ReactNode}
+        </div>
+      );
+    }
 
-    // return (
-    //   <div>
-    //     {
-    //       notifySuccess(
-    //         "Ação realizada com sucesso."
-    //       ) as unknown as React.ReactNode
-    //     }
-    //   </div>
-    // );
+    return (
+      <div>
+        {
+          notifySuccess(
+            "Ação realizada com sucesso."
+          ) as unknown as React.ReactNode
+        }
+      </div>
+    );
   };
 
   return (
@@ -61,7 +69,7 @@ export default function SendEmail() {
           value={email}
         />
 
-        <ButtonSubmit text={"Enviar"} path="/recoverPassword" />
+        <ButtonSubmit text={"Enviar"} />
       </form>
       <div className="divider">
         <p className="line"></p>
