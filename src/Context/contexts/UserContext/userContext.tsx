@@ -97,6 +97,10 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     navigate("/");
   };
 
+  const handleUpdateCredentials = async () => {
+    return;
+  };
+
   return (
     <UserContext.Provider
       value={{
@@ -105,6 +109,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
         handleSubmitRegister,
         handleLoginWithGoogle,
         handleLogout,
+        handleUpdateCredentials,
       }}
     >
       {children}

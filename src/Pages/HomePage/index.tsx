@@ -6,6 +6,7 @@ import { TestimoniesList } from "../../Components/TestimoniesCarousel";
 import { StyledHomePage } from "./style";
 
 export const HomePage = () => {
+
   return (
     <StyledHomePage>
       <section className="greetings-section">
