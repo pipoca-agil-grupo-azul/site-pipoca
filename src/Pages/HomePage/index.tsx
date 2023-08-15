@@ -3,9 +3,12 @@ import { HighLightedCarousel } from "../../Components/HighlightedCarousel";
 import { NewsletterSubscribe } from "../../Components/NewsLetterSubscribe";
 import { Subscribe } from "../../Components/Subscribe";
 import { TestimoniesList } from "../../Components/TestimoniesCarousel";
+import useAuth from "../../Context/hooks/useAuth";
 import { StyledHomePage } from "./style";
 
 export const HomePage = () => {
+  const { user } = useAuth();
+
   return (
     <StyledHomePage>
       <section className="greetings-section">
@@ -35,6 +38,8 @@ export const HomePage = () => {
       <section className="partnership-section">
         <BeAPartner />
       </section>
+
+      <button onClick={() => console.log(user)}>click</button>
     </StyledHomePage>
   );
 };
