@@ -18,7 +18,6 @@ export const LoginWithSocialMedia = () => {
         locale="pt-br"
         shape="pill"
         size="large"
-        width="1000"
       />
     </StyledLoginWithSocialMedia>
   );

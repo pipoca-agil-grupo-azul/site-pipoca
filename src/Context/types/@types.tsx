@@ -28,3 +28,12 @@ export interface IUpdateUserFormData {
   email: string;
   password: string;
 }
+
+export default interface IChangePasswordData {
+  newPassword: string;
+  confirmNewPassword: string;
+}
+
+export default interface IEmailChangePassword {
+  email: string;
+}

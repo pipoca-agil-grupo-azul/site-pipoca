@@ -6,10 +6,16 @@ export const StyledLoginForm = styled.div`
   max-width: 90%;
   margin: 0 auto;
 
+  .recoverParagraph {
+    margin-bottom: 1.25rem;
+    font-size: 18px;
+    font-weight: 400;
+  }
+
   h1 {
     margin-bottom: 2rem;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   form {
@@ -40,20 +46,20 @@ export const StyledLoginForm = styled.div`
     background-color: #cdcfd2;
   }
 
-  .input-password{
+  .input-password {
     display: flex;
     position: relative;
     width: 100%;
   }
 
-  .input-password button{
+  .input-password button {
     background-color: transparent;
     border: none;
     position: absolute;
     right: 10px;
     top: 33%;
   }
-  
+
   @media (max-width: 1023px) {
     h1 {
       font-size: 2rem;
