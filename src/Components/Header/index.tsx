@@ -17,7 +17,7 @@ export const Header = ({ style }: HeaderProps) => {
   const goToHome = () => {
     navigate("/");
   };
-
+  
   return (
     <StyledHeader style={style}>
       <img
@@ -27,6 +27,7 @@ export const Header = ({ style }: HeaderProps) => {
           goToHome();
         }}
       />
+      
 
       <div className={navBarVisibility}>
         <NavBar />

@@ -78,8 +78,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     try {
       const details: InfoGoogleLoginDetails = jwtDecode(response.credential);
       setUser(
-        JSON.stringify(details.email) as unknown as SetStateAction<IUser>
-      );
+        JSON.stringify(details.email) as unknown as SetStateAction<IUser>);
       localStorage.setItem("@AUTH_USER_GOOGLE_NAME", `${details.name}`);
       localStorage.setItem("@AUTH_USER_GOOGLE_EMAIL", `${details.email}`);
       notifySuccess("Login realizado com sucesso!");
