@@ -6,4 +6,5 @@ export const ButtonRecoverPassword = styled.div`
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  min-height: 20vh;
 `;

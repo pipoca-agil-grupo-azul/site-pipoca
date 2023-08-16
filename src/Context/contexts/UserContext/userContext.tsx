@@ -16,6 +16,7 @@ import {
   IRegisterFormData,
   IUser,
 } from "../../types/@types";
+import useHeader from "../../hooks/useHeader";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -23,6 +24,8 @@ export const UserProvider = ({ children }: IChildrenProps) => {
   const [user, setUser] = useState<IUser>(null);
 
   const navigate = useNavigate();
+
+  const { menuVisibility } = useHeader();
 
   useEffect(() => {
     const loadingFromStorage = () => {
@@ -94,6 +97,7 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     localStorage.clear();
     notifySuccess("Logout realizado com sucesso!");
     setUser(null);
+    menuVisibility()
     navigate("/");
   };
 

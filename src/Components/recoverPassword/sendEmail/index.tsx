@@ -71,29 +71,9 @@ export default function SendEmail() {
 
         <ButtonSubmit text={"Enviar"} />
       </form>
-      <div className="divider">
-        <p className="line"></p>
-        <p className="text"></p>
-        <p className="line"></p>
-      </div>
+      
 
       <ButtonRecoverPassword>
-        <ButtonSubmit
-          text={"Ir para o Login"}
-          styles={{
-            width: "80%",
-            justifyContent: "center",
-            backgroundColor: "white",
-            borderColor: "red",
-            color: "red",
-          }}
-          path="/login"
-        />
-        <ButtonSubmit
-          text={"Ir para a Home"}
-          styles={{ width: "50%", justifyContent: "center" }}
-          path="/"
-        />
       </ButtonRecoverPassword>
     </StyledLoginForm>
   );

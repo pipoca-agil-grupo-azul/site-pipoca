@@ -6,6 +6,11 @@ export default function DynamicHeaderWithUnauthenticatedUser() {
   const { menuVisibility } = useHeader();
   const navigate = useNavigate();
 
+  const handleNavigateLogin = () =>{
+      menuVisibility()
+      navigate("/login")
+  }
+
   return (
     <>
       {userUnAuthenticatedLinks.map((link) => {
@@ -22,7 +27,7 @@ export default function DynamicHeaderWithUnauthenticatedUser() {
       <Link
         to="/login"
         className="login-btn"
-        onClick={() => navigate("/login")}
+        onClick={() => handleNavigateLogin ()}
       >
         Conecte-se
       </Link>
