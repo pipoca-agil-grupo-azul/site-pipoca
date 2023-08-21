@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-family: var(--font-family-2);
 
@@ -56,6 +57,9 @@ export const StyledNavBar = styled.nav`
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: -5px;
+    width: fit-content;
   }
   .btn-logout:hover{
     transform: scale(1.6);
