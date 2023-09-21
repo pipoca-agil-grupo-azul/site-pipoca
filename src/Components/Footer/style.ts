@@ -13,6 +13,9 @@ export const StyledFooter = styled.footer`
   position: relative;
   color: var(--color-grey-0);
 
+  width: 100%;
+  
+
   .container__newsletter {
     display: flex;
     flex-direction: column;

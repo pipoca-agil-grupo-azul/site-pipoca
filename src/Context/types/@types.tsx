@@ -6,7 +6,7 @@ export interface IUser {
   id: number | null | undefined;
   email: string;
   name: string;
-  dateBirth: string;
+  dateBirth?: string;
   isPremium: boolean;
 }
 
@@ -27,4 +27,13 @@ export interface IUpdateUserFormData {
   name: string;
   email: string;
   password: string;
+}
+
+export default interface IChangePasswordData {
+  newPassword: string;
+  confirmNewPassword: string;
+}
+
+export default interface IEmailChangePassword {
+  email: string;
 }

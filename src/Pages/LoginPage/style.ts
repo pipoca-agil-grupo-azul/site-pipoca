@@ -13,4 +13,10 @@ export const StyledLoginPage = styled.main`
     font-weight: bold;
     cursor: pointer;
   }
+  .divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 8px;
+  }
 `;

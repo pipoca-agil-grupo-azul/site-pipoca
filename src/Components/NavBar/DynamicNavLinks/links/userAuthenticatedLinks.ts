@@ -11,12 +11,7 @@ export const userAuthenticatedLinks = [
         id: 1,
         content: "Atualizar Perfil",
         url: "/update",
-      },
-      {
-        id: 2,
-        content: "Sair",
-        url: "/",
-      },
+      }
     ],
   },
 ];

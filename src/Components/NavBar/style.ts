@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledNavBar = styled.nav`
   display: flex;
+  align-items: center;
   gap: 1rem;
   font-family: var(--font-family-2);
 
@@ -46,7 +47,28 @@ export const StyledNavBar = styled.nav`
     background-color: #ffcc33;
     transform: scale(1.1);
   }
+  .btn-logout{
+    border: none;
+    background-color: transparent;
+    transition: 400ms;
+    transition: transform 0.3s ease;
+    transform: scale(1.5);
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -5px;
+    width: fit-content;
+  }
+  .btn-logout:hover{
+    transform: scale(1.6);
+  }
+  .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   @media (max-width: 1023px) {
     .login-btn {
       font-size: var(--font-size-big);

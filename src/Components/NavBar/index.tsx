@@ -10,9 +10,6 @@ export const NavBar = () => {
     if (!user) {
       return <DynamicHeaderWithUnauthenticatedUser />;
     }
-    if (user && user.isPremium) {
-      return <DynamicHeaderWithAuthenticatedUser />;
-    }
     if (user) {
       return <DynamicHeaderWithAuthenticatedUser />;
     }
