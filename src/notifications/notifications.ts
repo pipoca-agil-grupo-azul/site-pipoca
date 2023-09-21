@@ -22,7 +22,9 @@ export const notifyLoading = (message: string) => {
   toast.loading(message, {
     position: toast.POSITION.TOP_RIGHT,
     autoClose: 1000,
+    hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
+    toastId: 'toastNotify'
   });
 };

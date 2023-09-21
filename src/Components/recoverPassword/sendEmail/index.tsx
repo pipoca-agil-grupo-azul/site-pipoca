@@ -22,7 +22,7 @@ export default function SendEmail() {
   const onSubmitForm = async (event) => {
     event.preventDefault();
 
-    const userEmail = await fetch("http://localhost:8080/user/email", {
+    const userEmail = await fetch("https://backend-pipoca.onrender.com/user/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -6,6 +6,7 @@ import { ButtonRecoverPassword } from "../sendEmail/style";
 import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { recoverPasswordSchema } from "./schema";
+import { useParams } from "react-router-dom";
 
 export default function RecoverPassword() {
   const [newPassword, setNewPassword] = useState("");
@@ -20,6 +21,10 @@ export default function RecoverPassword() {
   const onSubmitForm = (event) => {
     event.preventDefault();
   };
+
+  const { token } = useParams()
+
+  console.log(token)
 
   return (
     <StyledLoginForm>
