@@ -17,6 +17,7 @@ import {
   IUser,
 } from "../../types/@types";
 import useHeader from "../../hooks/useHeader";
+import { toast } from "react-toastify";
 
 export const UserContext = createContext({} as IUserContext);
 
@@ -75,7 +76,11 @@ export const UserProvider = ({ children }: IChildrenProps) => {
     } catch (error) {
       notifyFailed("Ocorreu um erro ao realizar o cadastro! Tente novamente.");
     }
+    finally {
+      toast.dismiss('toastNotify');
+    }
   };
+
 
   const handleLoginWithGoogle = async (response: CredentialResponse) => {
     try {

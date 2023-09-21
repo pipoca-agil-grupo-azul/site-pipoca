@@ -19,7 +19,6 @@ export const RegisterForm = () => {
   } = useForm<IRegisterFormData>({ resolver: yupResolver(schemaRegisterForm) });
 
   const submitRegister: SubmitHandler<IRegisterFormData> = (formData) => {
-    console.log(formData);
     handleSubmitRegister(formData);
   };
 
@@ -35,7 +34,7 @@ export const RegisterForm = () => {
       setIconPassword(false);
     }
   };
-  const [iconConfirmPassword, setIconConfirmPassword] = useState(false);
+ /*  const [iconConfirmPassword, setIconConfirmPassword] = useState(false);
   const [confirmPasswordInputType, setConfirmPasswordInputType] =
     useState("password");
 
@@ -47,7 +46,7 @@ export const RegisterForm = () => {
       setConfirmPasswordInputType("password");
       setIconConfirmPassword(false);
     }
-  };
+  }; */
 
   return (
     <StyledRegisterForm>
@@ -100,7 +99,7 @@ export const RegisterForm = () => {
           </button>
         </div>
 
-        <label htmlFor="confirmPassword">
+       {/*  <label htmlFor="confirmPassword">
           Confirmar senha <span> {errors.confirmPassword?.message} </span>{" "}
         </label>
         <div className="input-password">
@@ -115,7 +114,7 @@ export const RegisterForm = () => {
             {" "}
             {iconConfirmPassword ? <FiEye /> : <FiEyeOff />}{" "}
           </button>
-        </div>
+        </div> */}
 
         <ButtonSubmit text={"Cadastre-se"} />
       </form>

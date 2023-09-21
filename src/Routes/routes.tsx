@@ -22,7 +22,7 @@ export const AppRoutes = () => {
       <Route path="blog" element={<BlogPage />} />
       <Route path="/update" element={<UpdateUserPage />} />
       <Route path="/recover" element={<SendEmail />} />
-      <Route path="/recoverPassword" element={<RecoverPassword />} />
+      <Route path="/reset-password/:token" element={<RecoverPassword />} />
     </Routes>
   );
 };
